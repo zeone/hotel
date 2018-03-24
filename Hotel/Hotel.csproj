@@ -204,8 +204,31 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\img\common\fb-icon.png" />
+    <Content Include="Content\img\common\footer-bg.jpg" />
+    <Content Include="Content\img\common\footer-phone-icon.png" />
+    <Content Include="Content\img\common\insta-icon.png" />
+    <Content Include="Content\img\common\logo.png" />
+    <Content Include="Content\img\common\trip-advisor.png" />
+    <Content Include="Content\img\common\tw-icon.png" />
+    <Content Include="Content\img\home\arrows-down.png" />
+    <Content Include="Content\img\home\banner-bg.jpg" />
+    <Content Include="Content\img\home\healing-1.jpg" />
+    <Content Include="Content\img\home\healing-2.jpg" />
+    <Content Include="Content\img\home\healing-3.jpg" />
+    <Content Include="Content\normalize.css" />
+    <Content Include="Content\styles.css" />
     <Content Include="favicon.ico" />
+    <Content Include="fonts\Adagio\Adagioscript.svg" />
+    <Content Include="fonts\Adagio\preview.html" />
+    <Content Include="fonts\Adagio\styles.css" />
+    <Content Include="fonts\Arial-Black\Arial-Black.svg" />
+    <Content Include="fonts\Arial-Black\preview.html" />
+    <Content Include="fonts\Arial-Black\styles.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="fonts\Matilda\Matildascript.svg" />
+    <Content Include="fonts\Matilda\preview.html" />
+    <Content Include="fonts\Matilda\styles.css" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
@@ -213,6 +236,15 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="fonts\Adagio\Adagioscript.eot" />
+    <Content Include="fonts\Adagio\Adagioscript.ttf" />
+    <Content Include="fonts\Adagio\Adagioscript.woff" />
+    <Content Include="fonts\Arial-Black\Arial-Black.eot" />
+    <Content Include="fonts\Arial-Black\Arial-Black.ttf" />
+    <Content Include="fonts\Arial-Black\Arial-Black.woff" />
+    <Content Include="fonts\Matilda\Matildascript.eot" />
+    <Content Include="fonts\Matilda\Matildascript.ttf" />
+    <Content Include="fonts\Matilda\Matildascript.woff" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -234,7 +266,7 @@
     <Content Include="Views\Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
-    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Shared\_Layout1.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
@@ -258,6 +290,7 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

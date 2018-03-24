@@ -24,6 +24,9 @@ namespace Hotel.Models
             : base("DefaultConnection", throwIfV1Schema: false)
         {
         }
+        public DbSet<ApType> ApTypes { get; set; }
+        public DbSet<Apartment> Apartments { get; set; }
+        public DbSet<Reservation> Reservations { get; set; }
 
         public static ApplicationDbContext Create()
         {

@@ -1,0 +1,122 @@
+﻿@model Hotel.Models.Reservation
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<section class="banner" id="home-banner">
+    <div class="container">
+        <div class="banner-text">
+            <h1 class="banner-title">Вітаємо в Східниці</h1>
+            <hr class="banner-title-divider">
+            <h2 class="banner-subtitle">Ми робимо людей трішки щасливішими і здоровішими</h2>
+        </div>
+        <div class="banner-actions">
+            <a href="/" class="button-green">
+                Детальніше
+            </a>
+            <a href="/" class="button-black">
+                Бронювання
+            </a>
+        </div>
+        <a class="banner-details">
+            Прокрутіть униз для деталей
+        </a>
+    </div>
+</section>
+<section id="home-healing">
+    <div class="container">
+        <div>
+            <h3>Ви впевнені що хочете видалити резерв № @Html.DisplayFor(model => model.ReservationId) </h3>
+        </div>
+        <div id="home-healing-container">
+            <div>
+                <hr />
+                <dl class="dl-horizontal">
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Apartment.Name)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Apartment.Name)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.StartDate)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.StartDate)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.EndDate)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.EndDate)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Status)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Status)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Name)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Name)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Suname)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Suname)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Email)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Email)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.PhoneNumber)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.PhoneNumber)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.ReservationPriсe)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.ReservationPriсe)
+                    </dd>
+
+                </dl>
+
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+
+                    <div class="form-actions no-color">
+                        <input type="submit" value="Видалити" class="btn btn-default" /> |
+                        @Html.ActionLink("Повернутись", "Index")
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</section>

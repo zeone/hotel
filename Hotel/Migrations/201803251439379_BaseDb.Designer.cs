@@ -7,13 +7,13 @@ namespace Hotel.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class BaseModels1 : IMigrationMetadata
+    public sealed partial class BaseDb : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(BaseModels1));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(BaseDb));
         
         string IMigrationMetadata.Id
         {
-            get { return "201803241435367_BaseModels1"; }
+            get { return "201803251439379_BaseDb"; }
         }
         
         string IMigrationMetadata.Source

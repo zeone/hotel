@@ -12,17 +12,31 @@ namespace Hotel.Models
     {
         [Key]
         public int ReservationId { get; set; }
-        [ForeignKey("Apartment")]
+        [Required]
+        [Display(Name = "Назва номеру")]
         public int ApartmentId { get; set; }
+        [Required]
+        [Display(Name = "Дата заїзду")]
         public DateTime StartDate { get; set; }
+        [Required]
+        [Display(Name = "Дата виїзду")]
         public DateTime EndDate { get; set; }
+        [Display(Name = "Статус")]
         public ReservationStatus Status { get; set; }
+        [Required]
+        [Display(Name = "Ім'я")]
         public string Name { get; set; }
+        [Required]
+        [Display(Name = "Фамілія")]
         public string Suname { get; set; }
+        [Required]
+        [Display(Name = "e-mail")]
         public string Email { get; set; }
+        [Required]
+        [Display(Name = "Телефон")]
         public string PhoneNumber { get; set; }
-        public decimal ReservationPrie { get; set; }
-
+        [Display(Name = "Вартість на момент резервування")]
+        public decimal ReservationPriсe { get; set; }
         public Apartment Apartment { get; set; }
     }
 }

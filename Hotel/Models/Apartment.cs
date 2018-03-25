@@ -11,9 +11,14 @@ namespace Hotel.Models
     {
         [Key]
         public int ApartmentId { get; set; }
+        [Required]
+        [Display(Name = "Назва")]
         public string Name { get; set; }
+
+        [Display(Name = "Тип")]
         [ForeignKey("Type")]
-        public int ApTypeId { get; set; }
+        public int? ApTypeId { get; set; }
+
         public ApType Type { get; set; }
     }
 }

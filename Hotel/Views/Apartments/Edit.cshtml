@@ -1,0 +1,74 @@
+﻿@model Hotel.Models.Apartment
+
+@{
+    ViewBag.Title = "Редагування номеру";
+}
+
+<section class="banner" id="home-banner">
+    <div class="container">
+        <div class="banner-text">
+            <h1 class="banner-title">Вітаємо в Східниці</h1>
+            <hr class="banner-title-divider">
+            <h2 class="banner-subtitle">Ми робимо людей трішки щасливішими і здоровішими</h2>
+        </div>
+        <div class="banner-actions">
+            <a href="/" class="button-green">
+                Детальніше
+            </a>
+            <a href="/" class="button-black">
+                Бронювання
+            </a>
+        </div>
+        <a class="banner-details">
+            Прокрутіть униз для деталей
+        </a>
+    </div>
+</section>
+<section id="home-healing">
+    <div class="container">
+        <div>
+            <h2>Редагування номеру</h2>
+        </div>
+        <div id="home-healing-container">
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+
+                <div class="form-horizontal">
+                    <hr />
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    @Html.HiddenFor(model => model.ApartmentId)
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.ApTypeId, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.DropDownList("ApTypeId", null, htmlAttributes: new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.ApTypeId, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <input type="submit" value="Зберегти" class="btn btn-default" />
+                            @Html.ActionLink("Повернутись", "Index")
+                        </div>
+                    </div>
+                </div>
+            }
+
+            @section Scripts {
+                @Scripts.Render("~/bundles/jqueryval")
+            }
+        </div>
+    </div>
+</section>
+
+

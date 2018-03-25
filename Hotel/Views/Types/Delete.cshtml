@@ -1,0 +1,85 @@
+﻿@model Hotel.Models.ApType
+
+@{
+    ViewBag.Title = "Видалення типу";
+}
+
+
+<section class="banner" id="home-banner">
+    <div class="container">
+        <div class="banner-text">
+            <h1 class="banner-title">Вітаємо в Східниці</h1>
+            <hr class="banner-title-divider">
+            <h2 class="banner-subtitle">Ми робимо людей трішки щасливішими і здоровішими</h2>
+        </div>
+        <div class="banner-actions">
+            <a href="/" class="button-green">
+                Детальніше
+            </a>
+            <a href="/" class="button-black">
+                Бронювання
+            </a>
+        </div>
+        <a class="banner-details">
+            Прокрутіть униз для деталей
+        </a>
+    </div>
+</section>
+<section id="home-healing">
+    <div class="container">
+        <div>
+            <h3>Ви впевнені що хочете видалити тип @Html.DisplayFor(model => model.Name) </h3>
+        </div>
+        <div id="home-healing-container">
+            <div>
+                <hr />
+                <dl class="dl-horizontal">
+
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Name)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Name)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Price)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Price)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Description)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Description)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.NumOfPerson)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.NumOfPerson)
+                    </dd>
+
+                </dl>
+
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+
+                    <div class="form-actions no-color">
+                        <input type="submit" value="Видалити" class="btn btn-default" /> |
+                        @Html.ActionLink("Повернутись", "Index")
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,87 @@
+﻿@model Hotel.Models.ApType
+
+@{
+    ViewBag.Title = "Редагування типу";
+}
+
+<section class="banner" id="home-banner">
+    <div class="container">
+        <div class="banner-text">
+            <h1 class="banner-title">Вітаємо в Східниці</h1>
+            <hr class="banner-title-divider">
+            <h2 class="banner-subtitle">Ми робимо людей трішки щасливішими і здоровішими</h2>
+        </div>
+        <div class="banner-actions">
+            <a href="/" class="button-green">
+                Детальніше
+            </a>
+            <a href="/" class="button-black">
+                Бронювання
+            </a>
+        </div>
+        <a class="banner-details">
+            Прокрутіть униз для деталей
+        </a>
+    </div>
+</section>
+<section id="home-healing">
+    <div class="container">
+        <div>
+            <h2>Редагування типу</h2>
+        </div>
+        <div id="home-healing-container">
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+
+                <div class="form-horizontal">
+                    <hr />
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    @Html.HiddenFor(model => model.TypeId)
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Price, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.Price, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Price, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Description, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.Description, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.NumOfPerson, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.NumOfPerson, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.NumOfPerson, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <input type="submit" value="Зберегти" class="btn btn-default" />
+                            @Html.ActionLink("Повернутись", "Index")
+                        </div>
+                    </div>
+                </div>
+            }
+
+            @section Scripts {
+                @Scripts.Render("~/bundles/jqueryval")
+            }
+        </div>
+    </div>
+</section>

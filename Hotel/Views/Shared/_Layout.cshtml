@@ -46,6 +46,18 @@
                     <p class="header-link-text">
                         <a href="" class="header-link">Контакти</a>
                     </p>
+                   @if (User.Identity.IsAuthenticated)
+                   {
+                       <p class="header-link-text">
+                           <a href="/types" class="header-link">Види номерів</a>
+                       </p>
+                       <p class="header-link-text">
+                           <a href="/apartments" class="header-link">Номери</a>
+                       </p>
+                       <p class="header-link-text">
+                           <a href="/reservations" class="header-link">Резервування</a>
+                       </p>
+                   }
                 </div>
             </div>
         </div>

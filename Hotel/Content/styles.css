@@ -161,7 +161,8 @@
     background: url(img/home/banner-bg.jpg) center no-repeat;
     background-size: cover;
 }
-.home-banner__container {
+.home-banner__container,
+.contacts-banner__container {
     position: relative;
     padding-top: 240px;
     padding-bottom: 210px;
@@ -507,3 +508,67 @@
     width: 241px;
 }
 /* Home page end */
+/* Contacts page */
+#contacts-banner {
+    background: url(img/contacts/contacts-bg.jpg) center no-repeat;
+    background-size: cover;
+}
+.contacts-main__container {
+    padding-top: 85px;
+    padding-bottom: 125px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#contacts-map {
+    overflow: hidden;
+    width: 295px;
+    height: 295px;
+    border-radius: 50%;
+    -webkit-box-shadow: 0px 5px 7px 0px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow:    0px 5px 7px 0px rgba(0, 0, 0, 0.2);
+    box-shadow:         0px 5px 7px 0px rgba(0, 0, 0, 0.2);
+}
+.contacts-main__info {
+    width: 485px;
+    padding-right: 120px;
+}
+.contacts-main__title {
+    font-family: 'PT Serif', sans-serif;
+    font-weight: 700;
+    color: #3b3b3b;
+    font-size: 26px;
+    margin-bottom: 40px;
+}
+.contacts-main__text {
+    font-family: 'PT Sans', sans-serif;
+    font-size: 16px;
+    color: #3b3b3b;
+    line-height: 22px;
+    padding-left: 35px;
+    position: relative;
+    margin-bottom: 30px;
+}
+.contacts-main__text:before {
+    content: '';
+    display: block;
+    width: 18px;
+    height: 18px;
+    position: absolute;
+    top: 3px;
+    left: 0;
+    background: no-repeat center;
+}
+.contacts-main__address:before {
+    background-image: url(img/contacts/location-icon.png);
+}
+.contacts-main__phones:before {
+    background-image: url(img/contacts/phone-icon.png);
+}
+.contacts-main__email:before {
+    background-image: url(img/contacts/email-icon.png);
+}
+.contacts-main__skype:before {
+    background-image: url(img/contacts/laptop-icon.png);
+}
+/* Contacts page end */

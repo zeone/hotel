@@ -572,3 +572,24 @@
     background-image: url(img/contacts/laptop-icon.png);
 }
 /* Contacts page end */
+/* Healing page */
+
+.home-healing__container {
+    padding-top: 240px;
+    padding-bottom: 140px;
+}
+#healing-banner {
+    background: url(img/healing/banner-bg.jpg) center no-repeat;
+    background-size: cover;
+}
+/* Healing page end */
+/* About page */
+#about-banner {
+    background: url(img/about/banner-bg.jpg) center no-repeat;
+    background-size: cover;
+}
+.about-banner__container {
+    padding-top: 240px;
+    padding-bottom: 140px;
+}
+/* About page end */

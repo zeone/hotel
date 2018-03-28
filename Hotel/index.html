@@ -7,47 +7,49 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <!--Common part-->
-    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="Content/normalize.css">
     <link href="https://fonts.googleapis.com/css?family=Comfortaa:400,700&amp;subset=cyrillic" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,700&amp;subset=cyrillic" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,700&amp;subset=cyrillic" rel="stylesheet">
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="Content/styles.css">
     <!--Common part end-->
+    <link rel="stylesheet" href="Content/datepicker.min.css">
+    <link rel="stylesheet" href="Content/number.css">
 </head>
 <body>
     <header id="header">
         <div class="container">
             <div id="header-container">
-                    <a id="header-logo" href="/">Зелений Бір: Оздоровчий комплекс</a>
-                    <div id="header-main">
-                        <p class="header-link-text active">
-                            <a href="" class="header-link">Головна</a>
-                        </p>
-                        <p class="header-link-text">
-                            <a href="" class="header-link">Про нас</a>
-                        </p>
-                        <p class="header-link-text">
-                            <a href="" class="header-link">Галерея</a>
-                        </p>
-                        <p class="header-link-text">
-                            <a href="" class="header-link">Лiкування</a>
-                        </p>
-                        <p class="header-link-text">
-                            <a href="" class="header-link">Цiни</a>
-                        </p>
-                        <p class="header-link-text">
-                            <a href="" class="header-link">Бронювання</a>
-                        </p>
-                        <p class="header-link-text">
-                            <a href="" class="header-link">Контакти</a>
-                        </p>
-                    </div>
+                <a id="header-logo" href="/">Зелений Бір: Оздоровчий комплекс</a>
+                <div id="header-main">
+                    <p class="header-link-text active">
+                        <a href="" class="header-link">Головна</a>
+                    </p>
+                    <p class="header-link-text">
+                        <a href="" class="header-link">Про нас</a>
+                    </p>
+                    <p class="header-link-text">
+                        <a href="" class="header-link">Галерея</a>
+                    </p>
+                    <p class="header-link-text">
+                        <a href="" class="header-link">Лiкування</a>
+                    </p>
+                    <p class="header-link-text">
+                        <a href="" class="header-link">Цiни</a>
+                    </p>
+                    <p class="header-link-text">
+                        <a href="" class="header-link">Бронювання</a>
+                    </p>
+                    <p class="header-link-text">
+                        <a href="" class="header-link">Контакти</a>
+                    </p>
                 </div>
+            </div>
         </div>
     </header>
     <main>
         <section class="banner" id="home-banner">
-            <div class="container">
+            <div class="container home-banner__container">
                 <div class="banner-text">
                     <h1 class="banner-title">Вітаємо в Східниці</h1>
                     <hr class="banner-title-divider">
@@ -61,12 +63,53 @@
                         Бронювання
                     </a>
                 </div>
+                <form class="home-reservation">
+                    <button id="home-reservation__submit">Бронювання</button>
+                    <div class="home-reservation__inputs-container">
+                        <div class="home-reservation__input-wrapper">
+                            <label class="home-reservation__input-label">
+                                Заїзд
+                                <span class="arrival-date-wrapper">
+                                    <span id="arrival-day" class="home-reservation__number"></span>
+                                    <span id="arrival-month"></span>
+                                </span>
+                                <input id="arrival-date" class="home-reservation__input">
+                            </label>
+                        </div>
+                        <div class="home-reservation__input-wrapper">
+                            <label class="home-reservation__input-label">
+                                Виїзд
+                                <span class="arrival-date-wrapper">
+                                    <span id="departure-day" class="home-reservation__number"></span>
+                                    <span id="departure-month"></span>
+                                </span>
+                                <input id="departure-date" class="home-reservation__input">
+                            </label>
+                        </div>
+                        <div class="home-reservation__input-wrapper">
+                            <label class="home-reservation__input-label">
+                                Гостей
+                                <span class="arrival-date-wrapper">
+                                    <input id="home-reservation__amount" type="number" value="1" min="1" max="10">
+                                </span>
+                            </label>
+                        </div>
+                        <div class="home-reservation__input-wrapper">
+                            <label class="home-reservation__input-label">
+                                Ночей
+                                <span class="arrival-date-wrapper">
+                                    <span id="home-reservation-nights" class="home-reservation__number"></span>
+                                </span>
+                            </label>
+                        </div>
+                    </div>
+                </form>
                 <a class="banner-details">
                     Прокрутіть униз для деталей
                 </a>
             </div>
         </section>
-        <section class="home-gallery">
+        <section id="home-gallery" class="home-gallery">
             <div class="container home-gallery__container">
                 <div class="home-gallery__text-wrapper">
                     <h4 class="main-title">Галерея, про послуги</h4>
@@ -81,11 +124,11 @@
                 </div>
             </div>
             <div class="home-gallery__images-wrapper">
-                <img class="home-gallery__img-big" src="img/home/gallery-big.jpg" alt="">
+                <img class="home-gallery__img-big" src="Content/img/home/gallery-big.jpg" alt="">
                 <div class="home-gallery__images-inner-container container">
-                    <img class="home-gallery__img-medium" src="img/home/gallery-md.jpg" alt="">
-                    <img class="home-gallery__img-small" src="img/home/gallery-sm-1.jpg" alt="">
-                    <img class="home-gallery__img-small home-gallery__img-small-2" src="img/home/gallery-sm-2.jpg" alt="">
+                    <img class="home-gallery__img-medium" src="Content/img/home/gallery-md.jpg" alt="">
+                    <img class="home-gallery__img-small" src="Content/img/home/gallery-sm-1.jpg" alt="">
+                    <img class="home-gallery__img-small home-gallery__img-small-2" src="Content/img/home/gallery-sm-2.jpg" alt="">
                 </div>
             </div>
         </section>
@@ -93,9 +136,9 @@
             <div class="container">
                 <div id="home-healing-container">
                     <div id="home-healing-container__images">
-                        <img class="home-healing-container__half-width" src="img/home/healing-1.jpg" alt="">
-                        <img class="home-healing-container__half-width" src="img/home/healing-2.jpg" alt="">
-                        <img class="home-healing-container__full-width" src="img/home/healing-3.jpg" alt="">
+                        <img class="home-healing-container__half-width" src="Content/img/home/healing-1.jpg" alt="">
+                        <img class="home-healing-container__half-width" src="Content/img/home/healing-2.jpg" alt="">
+                        <img class="home-healing-container__full-width" src="Content/img/home/healing-3.jpg" alt="">
                     </div>
                     <div id="home-healing-container__text-wrapper">
                         <h4 class="home-healing-container__title main-title">Лікування, про послуги</h4>
@@ -170,23 +213,27 @@
                 <p class="footer-title">Зв'яжіться з нами через</p>
                 <div class="footer-socials">
                     <a href="" class="footer-social footer-social__fb">
-                        <img src="img/common/fb-icon.png" alt="">
+                        <img src="Content/img/common/fb-icon.png" alt="">
                     </a>
                     <a href="" class="footer-social footer-social__tw">
-                        <img src="img/common/tw-icon.png" alt="">
+                        <img src="Content/img/common/tw-icon.png" alt="">
                     </a>
                     <a href="" class="footer-social footer-social__insta">
-                        <img src="img/common/insta-icon.png" alt="">
+                        <img src="Content/img/common/insta-icon.png" alt="">
                     </a>
                     <a href="" class="footer-social footer-social__trip">
-                        <img src="img/common/trip-advisor.png" alt="">
+                        <img src="Content/img/common/trip-advisor.png" alt="">
                     </a>
                 </div>
             </div>
         </div>
     </footer>
     <!--Common part-->
-    <script></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <!--Common part end-->
+    <script src="Scripts/datepicker.min.js"></script>
+    <script src="Scripts/i18n/datepicker.en.js"></script>
+    <script src="Scripts/number.js"></script>
+    <script src="Scripts/homepage.js"></script>
 </body>
 </html>

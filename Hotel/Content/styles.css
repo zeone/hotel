@@ -698,4 +698,12 @@
     width: 100%;
     height: 50px;
 }
+.reservation-form__label-wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+.reservation-form__label--half {
+    width: 145px;
+    max-width: 49%;
+}
 /* Reservation page end */

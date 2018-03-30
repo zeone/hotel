@@ -707,3 +707,76 @@
     max-width: 49%;
 }
 /* Reservation page end */
+/* Prices page */
+#prices-banner {
+    background: url(img/prices/banner-bg.jpg);
+    background-size: cover;
+}
+.prices-banner__container {
+    padding-top: 250px;
+    padding-bottom: 180px;
+}
+.prices-main {
+    padding-top: 122px;
+    padding-bottom: 80px;
+    background: #f7f7f7;
+}
+.prices-table {
+    background: #fff;
+    margin-bottom: 50px;
+    box-shadow: 0px 5px 7px 0px rgba(0, 0, 0, 0.2);
+    padding: 75px 65px;
+}
+.prices-table__main-title {
+    font-family: 'PT Serif', sans-serif;
+    font-weight: 700;
+    font-size: 22px;
+    color: #3b3b3b;
+    margin-bottom: 40px;
+}
+.prices-table__wrapper {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 25px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #cbdae3;
+}
+.prices-table__wrapper--sub {
+    margin-left: 35px;
+    padding-top: 30px;
+}
+.prices-table__title,
+.prices-table__subtitle,
+.prices-table__price,
+.prices-table__time {
+    font-family: 'PT Sans', sans-serif;
+    font-size: 18px;
+    color: #4b4b4b;
+}
+.prices-table__title {
+    font-weight: 700;
+}
+.prices-table__price {
+    width: 50px;
+}
+.price-time-wrapper {
+    display: flex;
+    justify-content: space-between;
+    width: 170px;
+}
+.prices-table__time {
+    width: 70px;
+}
+.prices-table__time:before {
+    content: '';
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    margin-right: 9px;
+    background: url(img/prices/time-icon.png);
+}
+
+
+
+
+/* Prices page end */

@@ -979,7 +979,7 @@
     display: flex !important;
     flex-direction: column;
     flex-wrap: wrap;
-    height: 288px;
+    height: 288px !important;
     justify-content: space-between;
     align-content: space-between;
 }

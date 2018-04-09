@@ -1,17 +1,35 @@
 ﻿@{
     ViewBag.Title = "Contact";
 }
-<h2>@ViewBag.Title.</h2>
-<h3>@ViewBag.Message</h3>
-
-<address>
-    One Microsoft Way<br />
-    Redmond, WA 98052-6399<br />
-    <abbr title="Phone">P:</abbr>
-    425.555.0100
-</address>
-
-<address>
-    <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
-    <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
-</address>
+<section class="banner" id="contacts-banner">
+    <div class="container contacts-banner__container">
+        <div class="banner-text">
+            <h1 class="banner-title">Контакти</h1>
+            <hr class="banner-title-divider">
+            <h2 class="banner-subtitle">Будь-ласка заповніть всі наступні позиції для вашого бронювання</h2>
+        </div>
+    </div>
+</section>
+<section class="contacts-main">
+    <div class="container contacts-main__container">
+        <div id="contacts-map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d1549.629961272205!2d23.353730714121767!3d49.216557915127375!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sru!2sua!4v1522231180553" width="295" height="295" frameborder="0" style="border:0"></iframe>
+        </div>
+        <div class="contacts-main__info">
+            <p class="contacts-main__title">Контакти</p>
+            <p class="contacts-main__address contacts-main__text">Львівська обл. смт.Східниця вул.Шевченка,300</p>
+            <p class="contacts-main__phones contacts-main__text">
+                Тел/факс (03248)48110;  тел. (03248)48216
+                <br>
+                моб. (+38) 096  0247088
+                <br>
+                моб. (+38) 095  9112308
+            </p>
+            <p class="contacts-main__email contacts-main__text">zellbir@gmail.com</p>
+            <p class="contacts-main__skype contacts-main__text">lesya-zelenbir</p>
+        </div>
+    </div>
+</section>
+@section Scripts {
+    <script src="~/Scripts/contacts.js"></script>
+}

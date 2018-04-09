@@ -1,0 +1,82 @@
+﻿
+@{
+    ViewBag.Title = "Reservation";
+}
+
+<section class="banner" id="reservation-banner">
+    <div class="container reservation-banner__container">
+        <div class="banner-text">
+            <h1 class="banner-title">Бронювання</h1>
+            <hr class="banner-title-divider">
+            <h2 class="banner-subtitle">Будь-ласка заповніть всі наступні позиції для вашого бронювання</h2>
+        </div>
+    </div>
+</section>
+<section class="reservation-main">
+    <form class="reservation-form">
+        <p class="reservation-form__title">Зробiть бронювання</p>
+        <label class="reservation-form__label">
+            Категорія номеру
+            <select id="room-category" class="reservation-input reservation-select">
+                <option value="1">Стандарт</option>
+                <option value="2">Стандарт плюс</option>
+                <option value="3">Напівлюкс</option>
+                <option value="3">Люкс</option>
+            </select>
+        </label>
+        <div class="reservation-form__label-wrapper">
+            <label class="reservation-form__label reservation-form__label--half">
+                Дата заїзду
+                <input id="arrival-date" class="reservation-input">
+            </label>
+            <label class="reservation-form__label reservation-form__label--half">
+                Дата виїзду
+                <input id="departure-date" class="reservation-input">
+            </label>
+        </div>
+        <label class="reservation-form__label">
+            Ціна номеру
+            <input id="room-price" class="reservation-input">
+        </label>
+        <div class="reservation-form__label-wrapper">
+            <label class="reservation-form__label reservation-form__label--half">
+                Дорослі
+                <select id="adults-amount" class="reservation-input reservation-select">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="3">4</option>
+                </select>
+            </label>
+            <label class="reservation-form__label reservation-form__label--half">
+                Діти до 6 р.
+                <select id="children-amount" class="reservation-input reservation-select">
+                    <option value="0">Без дiтей</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                </select>
+            </label>
+        </div>
+        <label class="reservation-form__label">
+            Ваше прiзвище та iмя
+            <input id="name" class="reservation-input">
+        </label>
+        <label class="reservation-form__label">
+            Ваш контактний телефон
+            <input id="phone" class="reservation-input">
+        </label>
+        <label class="reservation-form__label">
+            Ваш коментар АБО побажання
+            <textarea id="comment" class="reservation-input reservation-textarea"></textarea>
+        </label>
+        <button class="button-green reservation-button">забронювати</button>
+    </form>
+</section>
+
+@section Scripts{
+    <script src="~/Scripts/chosen.jquery.min.js"></script>
+    <script src="~/Scripts/datepicker.min.js"></script>
+    <script src="~/Scripts/i18n/datepicker.en.js"></script>
+    <script src="~/Scripts/reservation.js"></script>
+}

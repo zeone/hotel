@@ -14,13 +14,17 @@
     <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,700&amp;subset=cyrillic" rel="stylesheet">
     <link rel="stylesheet" href="~/Content/number.css">
     <link href="~/Content/styles.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/Content/lightgallery.css">
+
     <!--Common part end-->
     @*@Styles.Render("~/Content/css")*@
     @Scripts.Render("~/bundles/modernizr")
     @Scripts.Render("~/bundles/jquery")
 
     <link rel="stylesheet" href="~/Content/datepicker.min.css">
- 
+    <link rel="stylesheet" href="~/Content/chosen.css">
+    <link rel="stylesheet" href="~/Content/slick.css">
+
 </head>
 <body>
     <header id="header">
@@ -29,25 +33,28 @@
                 <a id="header-logo" href="/">Зелений Бір: Оздоровчий комплекс</a>
                 <div id="header-main">
                     <p class="header-link-text active">
-                        <a href="" class="header-link">Головна</a>
+                        <a href="/" class="header-link">Головна</a>
                     </p>
                     <p class="header-link-text">
-                        <a href="" class="header-link">Про нас</a>
+                        <a href="about" class="header-link">Про нас</a>
                     </p>
                     <p class="header-link-text">
-                        <a href="" class="header-link">Галерея</a>
+                        <a href="Gallery" class="header-link">Галерея</a>
                     </p>
                     <p class="header-link-text">
-                        <a href="" class="header-link">Лiкування</a>
+                        <a href="Healing" class="header-link">Лiкування</a>
                     </p>
                     <p class="header-link-text">
-                        <a href="" class="header-link">Цiни</a>
+                        <a href="Rooms" class="header-link">Номери</a>
                     </p>
                     <p class="header-link-text">
-                        <a href="" class="header-link">Бронювання</a>
+                        <a href="Prices" class="header-link">Цiни</a>
                     </p>
                     <p class="header-link-text">
-                        <a href="" class="header-link">Контакти</a>
+                        <a href="Reservation" class="header-link">Бронювання</a>
+                    </p>
+                    <p class="header-link-text">
+                        <a href="Contact" class="header-link">Контакти</a>
                     </p>
                     @if (User.Identity.IsAuthenticated)
                     {
@@ -69,7 +76,7 @@
         @RenderBody()
     </main>
 
-   <footer id="footer">
+    <footer id="footer">
         <div class="container footer__container">
             <div id="footer-logo-wrapper">
                 <a id="footer-logo" href="/">Зелений Бір: Оздоровчий комплекс</a>
@@ -126,7 +133,6 @@
     <!--Common part-->
     <script></script>
     <!--Common part end-->
-
     @*@Scripts.Render("~/bundles/jquery")*@
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)

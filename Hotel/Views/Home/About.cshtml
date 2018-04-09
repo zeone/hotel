@@ -1,7 +1,56 @@
 ﻿@{
     ViewBag.Title = "About";
 }
-<h2>@ViewBag.Title.</h2>
-<h3>@ViewBag.Message</h3>
 
-<p>Use this area to provide additional information.</p>
+<section class="banner" id="about-banner">
+    <div class="container about-banner__container">
+        <div class="banner-text">
+            <h1 class="banner-title">декiлька слiв про нас</h1>
+            <hr class="banner-title-divider">
+            <h2 class="banner-subtitle">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, <br>
+                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. <br>
+                Ut enim ad minim veniam
+            </h2>
+        </div>
+    </div>
+</section>
+<section id="home-gallery" class="home-gallery">
+    <div class="container home-gallery__container">
+        <div class="home-gallery__text-wrapper">
+            <h4 class="main-title">Про Схiдницю</h4>
+            <p class="main-text home-gallery__text">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec convallis lorem nec enim tempus viverra condimentum eget dui. Quisque ac ornare orci lacinia facilisis velit eget interdum.
+                <br><br>
+                Quisque orci neque, euismod vitae turpis quis, accumsan iaculis velit. Nulla lacinia facilisis velit eget interdum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec convallis lorem nec enim tempus viverra condimentum
+            </p>
+        </div>
+    </div>
+    <div class="home-gallery__images-wrapper">
+        <img class="home-gallery__img-big" src="~/Content/img/about/about-lg.png" alt="">
+        <div class="home-gallery__images-inner-container container">
+            <img class="home-gallery__img-medium" src="~/Content/img/about/about-md.png" alt="">
+            <img class="home-gallery__img-small" src="~/Content/img/about/about-sm-1.png" alt="">
+            <img class="home-gallery__img-small home-gallery__img-small-2" src="~/Content/img/about/about-sm-2.png" alt="">
+        </div>
+    </div>
+</section>
+<section id="home-healing">
+    <div class="container">
+        <div id="home-healing-container">
+            <div id="home-healing-container__images">
+                <img class="home-healing-container__half-width" src="~/Content/img/about/about-hotel-1.jpg" alt="">
+                <img class="home-healing-container__half-width" src="~/Content/img/about/about-hotel-2.jpg" alt="">
+                <img class="home-healing-container__full-width" src="~/Content/img/about/about-hotel-3.jpg" alt="">
+            </div>
+            <div id="home-healing-container__text-wrapper">
+                <h4 class="home-healing-container__title main-title">Про отель</h4>
+                <p class="home-healing-container__text main-text">
+                    Lorem Ipsum roin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit.
+                    <br><br>
+                    Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. This duis sed odio sit amet nibh cursus a sit amet mauris. Morbi accumsan ipsum vulputate.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>

@@ -19,22 +19,48 @@ namespace Hotel.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
-
             return View();
         }
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page.";
 
             return View();
         }
 
-        public ActionResult ApList()
+        public ActionResult Gallery()
         {
-            var apps = db.Apartments.ToList();
-            return View(apps);
+
+            return View();
         }
+
+
+        public ActionResult Healing()
+        {
+
+            return View();
+        }
+
+
+        public ActionResult Prices()
+        {
+
+            return View();
+        }
+
+
+        public ActionResult Reservation()
+        {
+
+            return View();
+        }
+
+
+        public ActionResult Rooms()
+        {
+
+            return View();
+        }
+
     }
 }

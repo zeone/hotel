@@ -27,6 +27,7 @@ namespace Hotel.Models
         public DbSet<ApType> ApTypes { get; set; }
         public DbSet<Apartment> Apartments { get; set; }
         public DbSet<Reservation> Reservations { get; set; }
+        public DbSet<Gallery> Gallery { get; set; }
 
         public static ApplicationDbContext Create()
         {

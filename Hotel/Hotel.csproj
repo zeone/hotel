@@ -189,6 +189,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\ApartmentsController.cs" />
+    <Compile Include="Controllers\GalleriesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\ReservationsController.cs" />
@@ -197,14 +198,20 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\FileUploadFormHelper.cs" />
     <Compile Include="Migrations\201803251439379_BaseDb.cs" />
     <Compile Include="Migrations\201803251439379_BaseDb.Designer.cs">
       <DependentUpon>201803251439379_BaseDb.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201804091228476_AddedTableForGallery.cs" />
+    <Compile Include="Migrations\201804091228476_AddedTableForGallery.Designer.cs">
+      <DependentUpon>201804091228476_AddedTableForGallery.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Apartment.cs" />
     <Compile Include="Models\ApType.cs" />
+    <Compile Include="Models\Gallery.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Reservation.cs" />
@@ -223,6 +230,16 @@
     <Content Include="Content\img\common\logo.png" />
     <Content Include="Content\img\common\trip-advisor.png" />
     <Content Include="Content\img\common\tw-icon.png" />
+    <Content Include="Content\img\gallery\img-1.png" />
+    <Content Include="Content\img\gallery\img-2.jpg" />
+    <Content Include="Content\img\gallery\img-3.jpg" />
+    <Content Include="Content\img\gallery\img-4.jpg" />
+    <Content Include="Content\img\gallery\img-5.jpg" />
+    <Content Include="Content\img\gallery\img-6.jpg" />
+    <Content Include="Content\img\gallery\img-7.jpg" />
+    <Content Include="Content\img\gallery\img-8.jpg" />
+    <Content Include="Content\img\gallery\img-9.jpg" />
+    <Content Include="Content\img\gallery\loope.png" />
     <Content Include="Content\img\home\arrows-down.png" />
     <Content Include="Content\img\home\banner-bg.jpg" />
     <Content Include="Content\img\home\healing-1.jpg" />
@@ -268,6 +285,14 @@
     <Content Include="Scripts\chosen.jquery.min.js" />
     <Content Include="Scripts\contacts.js" />
     <Content Include="Scripts\datepicker.min.js" />
+    <Content Include="Scripts\dropzone\basic.css" />
+    <Content Include="Scripts\dropzone\basic.min.css" />
+    <Content Include="Scripts\dropzone\dropzone-amd-module.js" />
+    <Content Include="Scripts\dropzone\dropzone-amd-module.min.js" />
+    <Content Include="Scripts\dropzone\dropzone.css" />
+    <Content Include="Scripts\dropzone\dropzone.js" />
+    <Content Include="Scripts\dropzone\dropzone.min.css" />
+    <Content Include="Scripts\dropzone\dropzone.min.js" />
     <Content Include="Scripts\homepage.js" />
     <Content Include="Scripts\i18n\datepicker.cs.js" />
     <Content Include="Scripts\i18n\datepicker.da.js" />
@@ -358,6 +383,7 @@
     <Content Include="Views\Home\Prices.cshtml" />
     <Content Include="Views\Home\Reservation.cshtml" />
     <Content Include="Views\Home\Rooms.cshtml" />
+    <Content Include="Views\Galleries\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -377,6 +403,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201803251439379_BaseDb.resx">
       <DependentUpon>201803251439379_BaseDb.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804091228476_AddedTableForGallery.resx">
+      <DependentUpon>201804091228476_AddedTableForGallery.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

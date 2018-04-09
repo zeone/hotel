@@ -1,0 +1,63 @@
+﻿@using Hotel.Helpers
+@model IEnumerable<Hotel.Models.Gallery>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<section class="banner" id="about-banner">
+    <div class="container about-banner__container">
+        <div class="banner-text">
+            <h1 class="banner-title">декiлька слiв про нас</h1>
+            <hr class="banner-title-divider">
+            <h2 class="banner-subtitle">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, <br>
+                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. <br>
+                Ut enim ad minim veniam
+            </h2>
+        </div>
+    </div>
+</section>
+<section id="home-healing">
+    @Html.FileUploadForm("../Galleries/SaveUploadedFile")
+    <div class="container">
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.ImgName)
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        <img class="gallery-image" src="~/Content/img/gallery/@item.ImgName" />
+                    </td>
+                    <td>
+                        @Html.ActionLink("Delete", "Delete", new { id = item.ImgId })
+                    </td>
+                </tr>
+            }
+
+        </table>
+    </div>
+</section>
+
+
+@section scripts{
+    <script type="text/javascript">
+        Dropzone.options.dropzoneForm = {
+            init: function () {
+                myDropzone = this;
+                this.on("complete", function (data) {
+                    var res = JSON.parse(data.xhr.responseText);
+                    console.log(res.Message);
+                });
+            },
+            queuecomplete: function () { location.reload(); }
+        };
+    </script>
+}
+

@@ -31,7 +31,7 @@ namespace Hotel.Controllers
         public ActionResult Gallery()
         {
 
-            return View();
+            return View(db.Gallery.ToList());
         }
 
 

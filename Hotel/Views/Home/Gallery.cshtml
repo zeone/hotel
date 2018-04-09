@@ -1,59 +1,65 @@
-﻿
-@{
-    ViewBag.Title = "Gallery";
-}
+﻿@model IEnumerable<Hotel.Models.Gallery>
+    @{
+        ViewBag.Title = "Gallery";
+    }
 
 
-<section id="gallery-banner"></section>
-<section class="gallery-main">
-    <p class="main-title gallery-title">Галерея</p>
-    <div id="gallery-wrapper">
-        <a class="gallery-thumbnail" href="~/Content/img/gallery/img-1.png">
-            <img class="gallery-image" src="~/Content/img/gallery/img-1.png" />
-        </a>
-        <a class="gallery-thumbnail" href="~/Content/img/gallery/img-2.jpg">
-            <img class="gallery-image" src="~/Content/img/gallery/img-2.jpg" />
-        </a>
-        <a class="gallery-thumbnail" href="~/Content/img/gallery/img-3.jpg">
-            <img class="gallery-image" src="~/Content/img/gallery/img-3.jpg" />
-        </a>
-        <a class="gallery-thumbnail" href="~/Content/img/gallery/img-4.jpg">
-            <img class="gallery-image" src="~/Content/img/gallery/img-4.jpg" />
-        </a>
-        <a class="gallery-thumbnail" href="~/Content/img/gallery/img-5.jpg">
-            <img class="gallery-image" src="~/Content/img/gallery/img-5.jpg" />
-        </a>
-        <a class="gallery-thumbnail" href="~/Content/img/gallery/img-6.jpg">
-            <img class="gallery-image" src="~/Content/img/gallery/img-6.jpg" />
-        </a>
-        <a class="gallery-thumbnail" href="~/Content/img/gallery/img-7.jpg">
-            <img class="gallery-image" src="~/Content/img/gallery/img-7.jpg" />
-        </a>
-        <a class="gallery-thumbnail" href="~/Content/img/gallery/img-8.jpg">
-            <img class="gallery-image" src="~/Content/img/gallery/img-8.jpg" />
-        </a>
-        <a class="gallery-thumbnail" href="~/Content/img/gallery/img-9.jpg">
-            <img class="gallery-image" src="~/Content/img/gallery/img-9.jpg" />
-        </a>
-    </div>
-    <button class="button-green gallery-btn">БIльше фото</button>
-</section>
+    <section id="gallery-banner"></section>
+    <section class="gallery-main">
+        <p class="main-title gallery-title">Галерея</p>
+        <div id="gallery-wrapper">
+            @foreach (var img in Model)
+            {
+                <a class="gallery-thumbnail" href="~/Content/img/gallery/@img.ImgName">
+                    <img class="gallery-image" src="~/Content/img/gallery/@img.ImgName" />
+                </a>
+            }
+            @*<a class="gallery-thumbnail" href="~/Content/img/gallery/img-1.png">
+                <img class="gallery-image" src="~/Content/img/gallery/img-1.png" />
+            </a>
+            <a class="gallery-thumbnail" href="~/Content/img/gallery/img-2.jpg">
+                <img class="gallery-image" src="~/Content/img/gallery/img-2.jpg" />
+            </a>
+            <a class="gallery-thumbnail" href="~/Content/img/gallery/img-3.jpg">
+                <img class="gallery-image" src="~/Content/img/gallery/img-3.jpg" />
+            </a>
+            <a class="gallery-thumbnail" href="~/Content/img/gallery/img-4.jpg">
+                <img class="gallery-image" src="~/Content/img/gallery/img-4.jpg" />
+            </a>
+            <a class="gallery-thumbnail" href="~/Content/img/gallery/img-5.jpg">
+                <img class="gallery-image" src="~/Content/img/gallery/img-5.jpg" />
+            </a>
+            <a class="gallery-thumbnail" href="~/Content/img/gallery/img-6.jpg">
+                <img class="gallery-image" src="~/Content/img/gallery/img-6.jpg" />
+            </a>
+            <a class="gallery-thumbnail" href="~/Content/img/gallery/img-7.jpg">
+                <img class="gallery-image" src="~/Content/img/gallery/img-7.jpg" />
+            </a>
+            <a class="gallery-thumbnail" href="~/Content/img/gallery/img-8.jpg">
+                <img class="gallery-image" src="~/Content/img/gallery/img-8.jpg" />
+            </a>
+            <a class="gallery-thumbnail" href="~/Content/img/gallery/img-9.jpg">
+                <img class="gallery-image" src="~/Content/img/gallery/img-9.jpg" />
+            </a>*@
+        </div>
+        <button class="button-green gallery-btn">БIльше фото</button>
+    </section>
 
-@section Scripts {
-    <script src="~/Scripts/lightgallery.min.js"></script>
-    <script type="text/javascript">
-        $(document).ready(function () {
-            setGalleryHeight();
-            lightGallery(document.getElementById('gallery-wrapper'));
-        });
-
-        function setGalleryHeight() {
-            var allImagesHeight = 0;
-            $('.gallery-thumbnail').each(function () {
-                allImagesHeight += $(this).outerHeight() + Number.parseInt($(this).css('margin-bottom'));
+    @section Scripts {
+        <script src="~/Scripts/lightgallery.min.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function () {
+                setGalleryHeight();
+                lightGallery(document.getElementById('gallery-wrapper'));
             });
-            console.log(allImagesHeight);
-            $('#gallery-wrapper').height(allImagesHeight / 3 + 'px');
-        }
-    </script>
-}
+
+            function setGalleryHeight() {
+                var allImagesHeight = 0;
+                $('.gallery-thumbnail').each(function () {
+                    allImagesHeight += $(this).outerHeight() + Number.parseInt($(this).css('margin-bottom'));
+                });
+                console.log(allImagesHeight);
+                $('#gallery-wrapper').height(allImagesHeight / 3 + 'px');
+            }
+        </script>
+    }

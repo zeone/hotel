@@ -19,8 +19,8 @@
     <!--Common part end-->
     @*@Styles.Render("~/Content/css")*@
     @Scripts.Render("~/bundles/modernizr")
-    @Scripts.Render("~/bundles/jquery")
 
+    @Styles.Render("~/Content/dropzonescss")
     <link rel="stylesheet" href="~/Content/datepicker.min.css">
     <link rel="stylesheet" href="~/Content/chosen.css">
     <link rel="stylesheet" href="~/Content/slick.css">
@@ -56,8 +56,12 @@
                     <p class="header-link-text">
                         <a href="Contact" class="header-link">Контакти</a>
                     </p>
-                    @if (User.Identity.IsAuthenticated)
-                    {
+
+                </div>
+                @if (User.Identity.IsAuthenticated)
+                {
+                    <div style="width: 100%"></div>
+                    <div id="admin-header-main">
                         <p class="header-link-text">
                             <a href="/types" class="header-link">Види номерів</a>
                         </p>
@@ -67,8 +71,11 @@
                         <p class="header-link-text">
                             <a href="/reservations" class="header-link">Резервування</a>
                         </p>
-                    }
-                </div>
+                        <p class="header-link-text">
+                            <a href="/Galleries" class="header-link">Редагування галереї</a>
+                        </p>
+                    </div>
+                }
             </div>
         </div>
     </header>
@@ -134,7 +141,9 @@
     <script></script>
     <!--Common part end-->
     @*@Scripts.Render("~/bundles/jquery")*@
+    @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/dropzonescripts")
     @RenderSection("scripts", required: false)
 </body>
 </html>

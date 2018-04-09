@@ -68,8 +68,15 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-flow: row wrap;
 }
 #header-main {
+    display: flex;
+    justify-content: space-between;
+    width: 725px;
+    max-width: 80%;
+}
+#admin-header-main {
     display: flex;
     justify-content: space-between;
     width: 725px;

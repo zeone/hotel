@@ -34,6 +34,12 @@ namespace Hotel
             bundles.Add(new ScriptBundle("~/bundles/number").Include(
                 "~/Scripts/number.js"
                 ));
+
+            bundles.Add(new ScriptBundle("~/bundles/dropzonescripts").Include(
+                "~/Scripts/dropzone/dropzone.js"));
+
+            bundles.Add(new StyleBundle("~/Content/dropzonescss").Include(
+                "~/Scripts/dropzone/dropzone.css"));
         }
     }
 }

@@ -12,12 +12,15 @@
     <link href="https://fonts.googleapis.com/css?family=Comfortaa:400,700&amp;subset=cyrillic" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,700&amp;subset=cyrillic" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,700&amp;subset=cyrillic" rel="stylesheet">
-    @*<link rel="stylesheet" href="css/styles.css">*@
+    <link rel="stylesheet" href="~/Content/number.css">
     <link href="~/Content/styles.css" rel="stylesheet" />
     <!--Common part end-->
-    @Styles.Render("~/Content/css")
+    @*@Styles.Render("~/Content/css")*@
     @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
 
+    <link rel="stylesheet" href="~/Content/datepicker.min.css">
+ 
 </head>
 <body>
     <header id="header">
@@ -46,18 +49,18 @@
                     <p class="header-link-text">
                         <a href="" class="header-link">Контакти</a>
                     </p>
-                   @if (User.Identity.IsAuthenticated)
-                   {
-                       <p class="header-link-text">
-                           <a href="/types" class="header-link">Види номерів</a>
-                       </p>
-                       <p class="header-link-text">
-                           <a href="/apartments" class="header-link">Номери</a>
-                       </p>
-                       <p class="header-link-text">
-                           <a href="/reservations" class="header-link">Резервування</a>
-                       </p>
-                   }
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <p class="header-link-text">
+                            <a href="/types" class="header-link">Види номерів</a>
+                        </p>
+                        <p class="header-link-text">
+                            <a href="/apartments" class="header-link">Номери</a>
+                        </p>
+                        <p class="header-link-text">
+                            <a href="/reservations" class="header-link">Резервування</a>
+                        </p>
+                    }
                 </div>
             </div>
         </div>
@@ -66,34 +69,7 @@
         @RenderBody()
     </main>
 
-    @*<div class="navbar navbar-inverse navbar-fixed-top">
-            <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-                </div>
-                <div class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav">
-                        <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                        <li>@Html.ActionLink("About", "About", "Home")</li>
-                        <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                    </ul>
-                    @Html.Partial("_LoginPartial")
-                </div>
-            </div>
-        </div>
-        <div class="container body-content">
-            @RenderBody()
-            <hr />
-            <footer>
-                <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-            </footer>
-        </div>*@
-    <footer id="footer">
+   <footer id="footer">
         <div class="container footer__container">
             <div id="footer-logo-wrapper">
                 <a id="footer-logo" href="/">Зелений Бір: Оздоровчий комплекс</a>
@@ -150,7 +126,8 @@
     <!--Common part-->
     <script></script>
     <!--Common part end-->
-    @Scripts.Render("~/bundles/jquery")
+
+    @*@Scripts.Render("~/bundles/jquery")*@
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
 </body>

@@ -26,6 +26,14 @@ namespace Hotel
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));
+
+            bundles.Add(new ScriptBundle("~/bundles/datepicker").Include(
+                "~/Scripts/datepicker.min.js",
+                "~/Scripts/i18n/datepicker.en.js"
+                ));
+            bundles.Add(new ScriptBundle("~/bundles/number").Include(
+                "~/Scripts/number.js"
+                ));
         }
     }
 }

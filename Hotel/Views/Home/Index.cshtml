@@ -3,7 +3,7 @@
 }
 
 <section class="banner" id="home-banner">
-    <div class="container">
+    <div class="container home-banner__container">
         <div class="banner-text">
             <h1 class="banner-title">Вітаємо в Східниці</h1>
             <hr class="banner-title-divider">
@@ -17,9 +17,73 @@
                 Бронювання
             </a>
         </div>
+        <form class="home-reservation">
+            <button id="home-reservation__submit">Бронювання</button>
+            <div class="home-reservation__inputs-container">
+                <div class="home-reservation__input-wrapper">
+                    <label class="home-reservation__input-label">
+                        Заїзд
+                        <span class="arrival-date-wrapper">
+                            <span id="arrival-day" class="home-reservation__number"></span>
+                            <span id="arrival-month"></span>
+                        </span>
+                        <input id="arrival-date" class="home-reservation__input">
+                    </label>
+                </div>
+                <div class="home-reservation__input-wrapper">
+                    <label class="home-reservation__input-label">
+                        Виїзд
+                        <span class="arrival-date-wrapper">
+                            <span id="departure-day" class="home-reservation__number"></span>
+                            <span id="departure-month"></span>
+                        </span>
+                        <input id="departure-date" class="home-reservation__input">
+                    </label>
+                </div>
+                <div class="home-reservation__input-wrapper">
+                    <label class="home-reservation__input-label">
+                        Гостей
+                        <span class="arrival-date-wrapper">
+                            <input id="home-reservation__amount" type="number" value="1" min="1" max="10">
+                        </span>
+                    </label>
+                </div>
+                <div class="home-reservation__input-wrapper">
+                    <label class="home-reservation__input-label">
+                        Ночей
+                        <span class="arrival-date-wrapper">
+                            <span id="home-reservation-nights" class="home-reservation__number"></span>
+                        </span>
+                    </label>
+                </div>
+            </div>
+        </form>
         <a class="banner-details">
             Прокрутіть униз для деталей
         </a>
+    </div>
+</section>
+<section id="home-gallery" class="home-gallery">
+    <div class="container home-gallery__container">
+        <div class="home-gallery__text-wrapper">
+            <h4 class="main-title">Галерея, про послуги</h4>
+            <p class="main-text home-gallery__text">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec convallis lorem nec enim tempus viverra condimentum eget dui. Quisque ac ornare orci lacinia facilisis velit eget interdum.
+                <br>
+                Quisque orci neque, euismod vitae turpis quis, accumsan iaculis velit. Nulla lacinia facilisis velit eget interdum.
+            </p>
+            <a href="/" class="button-green home-gallery__btn">
+                Детальніше
+            </a>
+        </div>
+    </div>
+    <div class="home-gallery__images-wrapper">
+        <img class="home-gallery__img-big" src="~/Content/img/home/gallery-big.jpg" alt="">
+        <div class="home-gallery__images-inner-container container">
+            <img class="home-gallery__img-medium" src="~/Content/img/home/gallery-md.jpg" alt="">
+            <img class="home-gallery__img-small" src="~/Content/img/home/gallery-sm-1.jpg" alt="">
+            <img class="home-gallery__img-small home-gallery__img-small-2" src="~/Content/img/home/gallery-sm-2.jpg" alt="">
+        </div>
     </div>
 </section>
 <section id="home-healing">
@@ -63,3 +127,9 @@
         </div>
     </div>
 </section>
+@section Scripts {
+    <script src="~/Scripts/datepicker.min.js"></script>
+    <script src="~/Scripts/i18n/datepicker.en.js"></script>
+    <script src="~/Scripts/number.js"></script>
+    <script src="~/Scripts/homepage.js"></script>
+}

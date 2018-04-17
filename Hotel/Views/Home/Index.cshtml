@@ -1,4 +1,5 @@
-﻿@{
+﻿@model Hotel.Models.Reservation
+@{
     ViewBag.Title = "Home Page";
 }
 
@@ -10,14 +11,18 @@
             <h2 class="banner-subtitle">Ми робимо людей трішки щасливішими і здоровішими</h2>
         </div>
         <div class="banner-actions">
-            <a href="/" class="button-green">
+            <a href="about" class="button-green">
                 Детальніше
             </a>
-            <a href="/" class="button-black">
+            <a href="Reservation" class="button-black">
                 Бронювання
             </a>
         </div>
-        <form class="home-reservation">
+        @using (Html.BeginForm("Reservation", "Home", FormMethod.Get, new { @class = "home-reservation" }))
+        {
+            @Html.Hidden("StartDate")
+            @Html.Hidden("EndDate")
+            @Html.Hidden("GuestCount", 1)
             <button id="home-reservation__submit">Бронювання</button>
             <div class="home-reservation__inputs-container">
                 <div class="home-reservation__input-wrapper">
@@ -27,7 +32,7 @@
                             <span id="arrival-day" class="home-reservation__number"></span>
                             <span id="arrival-month"></span>
                         </span>
-                        <input id="arrival-date" class="home-reservation__input">
+                        <input id="arrival-date" name="arrival-date" class="home-reservation__input">
                     </label>
                 </div>
                 <div class="home-reservation__input-wrapper">
@@ -57,7 +62,7 @@
                     </label>
                 </div>
             </div>
-        </form>
+        }
         <a class="banner-details">
             Прокрутіть униз для деталей
         </a>
@@ -72,7 +77,7 @@
                 <br>
                 Quisque orci neque, euismod vitae turpis quis, accumsan iaculis velit. Nulla lacinia facilisis velit eget interdum.
             </p>
-            <a href="/" class="button-green home-gallery__btn">
+            <a href="Gallery" class="button-green home-gallery__btn">
                 Детальніше
             </a>
         </div>
@@ -101,7 +106,7 @@
                     <br>
                     Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. This duis sed odio sit amet nibh cursus a sit amet mauris. Morbi accumsan ipsum vulputate.
                 </p>
-                <a href="/" class="button-green home-healing__btn">
+                <a href="Healing" class="button-green home-healing__btn">
                     Детальніше
                 </a>
             </div>

@@ -37,6 +37,8 @@ namespace Hotel.Models
         public string PhoneNumber { get; set; }
         [Display(Name = "Вартість на момент резервування")]
         public decimal ReservationPriсe { get; set; }
+        [Display(Name = "Кількість гостей")]
+        public int GuestCount { get; set; }
         public Apartment Apartment { get; set; }
     }
 }

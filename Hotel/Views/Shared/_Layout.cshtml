@@ -91,22 +91,25 @@
             <div id="footer-menu">
                 <p class="footer-title">Меню</p>
                 <p class="footer-link__wrapper">
-                    <a href="" class="footer-link footer-text">Головна</a>
+                    <a href="/" class="footer-link footer-text">Головна</a>
                 </p>
                 <p class="footer-link__wrapper">
-                    <a href="" class="footer-link footer-text">Про нас</a>
+                    <a href="about" class="footer-link footer-text">Про нас</a>
                 </p>
                 <p class="footer-link__wrapper">
-                    <a href="" class="footer-link footer-text">Галерея</a>
+                    <a href="Gallery" class="footer-link footer-text">Галерея</a>
                 </p>
                 <p class="footer-link__wrapper">
-                    <a href="" class="footer-link footer-text">Лікування</a>
+                    <a href="Healing" class="footer-link footer-text">Лікування</a>
                 </p>
                 <p class="footer-link__wrapper">
-                    <a href="" class="footer-link footer-text">Ціни</a>
+                    <a href="Rooms" class="footer-link footer-text">Номери</a>
                 </p>
                 <p class="footer-link__wrapper">
-                    <a href="" class="footer-link footer-text">Бронювання</a>
+                    <a href="Prices" class="footer-link footer-text">Ціни</a>
+                </p>
+                <p class="footer-link__wrapper">
+                    <a href="Reservation" class="footer-link footer-text">Бронювання</a>
                 </p>
             </div>
             <div id="footer-contacts">
@@ -139,11 +142,31 @@
     </footer>
     <!--Common part-->
     <script></script>
+
     <!--Common part end-->
     @*@Scripts.Render("~/bundles/jquery")*@
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @Scripts.Render("~/bundles/dropzonescripts")
     @RenderSection("scripts", required: false)
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+            var currLink = document.URL.split('/');
+            var curLocation = currLink[currLink.length - 1];
+            console.log(curLocation);
+            //Remove all links' active class
+            if (curLocation === "Gallery") {
+                $("#header-main .header-link").each(function () {
+                    $(this).removeClass("header-link");
+                    //Add the current link active class
+                    $(this).addClass("header-inverted");
+                });
+            }
+
+        });
+
+
+    </script>
 </body>
 </html>

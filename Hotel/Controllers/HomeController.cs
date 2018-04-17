@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 using System.Data.Entity;
 using System.Linq;
 using System.Web;
@@ -48,10 +49,11 @@ namespace Hotel.Controllers
             return View();
         }
 
-
-        public ActionResult Reservation()
+        [HttpGet]
+        public ActionResult Reservation(Reservation reserv)
         {
-
+            NameValueCollection nvc = Request.Form;
+            var model = reserv;
             return View();
         }
 

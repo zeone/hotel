@@ -25,7 +25,6 @@
         startDate = $('#StartDate');
         endDate = $('#EndDate');
         guestCount = $('#GuestCount');
-        guestCount.val(1);
         arrivalDatepicker.selectDate(new Date());
         departureDatepicker.selectDate(new Date());
 
@@ -47,11 +46,15 @@
     });
 
     function onArrivalDateSelect(formattedDate, date) {
+        var formattedDateArray = formattedDate.split(' ');
+
         if (departureDate && date > departureDate) {
-            return
+            departureDate = date;
+            endDate.val(date.toJSON());
+            $departureDayVisual.text(formattedDateArray[0]);
+            $departureMonthVisual.text(formattedDateArray[1]);
         }
 
-        var formattedDateArray = formattedDate.split(' ');
         $arrivalDayVisual.text(formattedDateArray[0]);
         $arrivalMonthVisual.text(formattedDateArray[1]);
 
@@ -66,7 +69,7 @@
 
     function onDepartureDateSelect(formattedDate, date) {
         if (arrivalDate && date < arrivalDate) {
-            return
+            return;
         }
 
         var formattedDateArray = formattedDate.split(' ');

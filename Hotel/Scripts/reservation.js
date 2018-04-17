@@ -1,5 +1,5 @@
-(function($){
-    var arrivalDate, departureDate;
+(function ($) {
+    var arrivalDate, departureDate, startDate, endDate, departureDatepicker;
 
     $(document).ready(function () {
         $('#arrival-date').datepicker({
@@ -14,7 +14,10 @@
         });
 
         var arrivalDatepicker = $('#arrival-date').datepicker().data('datepicker');
-        var departureDatepicker = $('#departure-date').datepicker().data('datepicker');
+        departureDatepicker = $('#departure-date').datepicker().data('datepicker');
+
+        startDate = $('#StartDate');
+        endDate = $('#EndDate');
 
         arrivalDatepicker.selectDate(new Date());
         departureDatepicker.selectDate(new Date());
@@ -26,7 +29,8 @@
 
     function onArrivalDateSelect(formattedDate, date) {
         if (departureDate && date > departureDate) {
-            return
+            departureDatepicker.selectDate(date);
+            endDate.val(date.toJSON());
         }
 
         arrivalDate = date;
@@ -34,7 +38,7 @@
 
     function onDepartureDateSelect(formattedDate, date) {
         if (arrivalDate && date < arrivalDate) {
-            return
+            return;
         }
 
         departureDate = date;

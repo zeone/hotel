@@ -1,7 +1,8 @@
-﻿
+﻿@model Hotel.Models.ReservationView
 @{
     ViewBag.Title = "Reservation";
 }
+
 
 <section class="banner" id="reservation-banner">
     <div class="container reservation-banner__container">
@@ -13,15 +14,21 @@
     </div>
 </section>
 <section class="reservation-main">
-    <form class="reservation-form">
+    @*<form class="reservation-form">*@
+    @using (Html.BeginForm("Reservation", "Home", FormMethod.Post, new { @class = "reservation-form" }))
+    {
+        @Html.Hidden("TypeId")
+        @Html.Hidden("StartDate", Model.StartDate.Subtract(new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc)).TotalMilliseconds)
+
+        @Html.Hidden("EndDate", Model.EndDate.Subtract(new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc)).TotalMilliseconds)
         <p class="reservation-form__title">Зробiть бронювання</p>
         <label class="reservation-form__label">
             Категорія номеру
             <select id="room-category" class="reservation-input reservation-select">
-                <option value="1">Стандарт</option>
-                <option value="2">Стандарт плюс</option>
-                <option value="3">Напівлюкс</option>
-                <option value="3">Люкс</option>
+                @foreach (var t in Model.Types)
+                {
+                    <option value="@t.TypeId">@t.Name</option>
+                }
             </select>
         </label>
         <div class="reservation-form__label-wrapper">
@@ -71,7 +78,8 @@
             <textarea id="comment" class="reservation-input reservation-textarea"></textarea>
         </label>
         <button class="button-green reservation-button">забронювати</button>
-    </form>
+        @*</form>*@
+    }
 </section>
 
 @section Scripts{

@@ -20,8 +20,8 @@
         </div>
         @using (Html.BeginForm("Reservation", "Home", FormMethod.Get, new { @class = "home-reservation" }))
         {
-            @Html.Hidden("StartDate")
-            @Html.Hidden("EndDate")
+            @Html.Hidden("indexStartDate")
+            @Html.Hidden("indexEndDate")
             @Html.Hidden("GuestCount", 1)
             <button id="home-reservation__submit">Бронювання</button>
             <div class="home-reservation__inputs-container">

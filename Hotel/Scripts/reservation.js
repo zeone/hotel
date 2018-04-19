@@ -19,7 +19,22 @@
         startDate = $('#StartDate');
         endDate = $('#EndDate');
 
-        arrivalDatepicker.selectDate(new Date());
+
+
+        if (startDate.length > 0) {
+            var curDate = new Date(parseInt(startDate.val()));
+            arrivalDatepicker.selectDate(curDate);
+        } else {
+            arrivalDatepicker.selectDate(new Date());
+        }
+
+        if (endDate.length > 0) {
+            var curDate = new Date(parseInt(endDate.val()));
+            departureDatepicker.selectDate(curDate);
+        } else {
+            departureDatepicker.selectDate(new Date());
+        }
+
         departureDatepicker.selectDate(new Date());
 
         $('.reservation-select').chosen({
@@ -32,7 +47,7 @@
             departureDatepicker.selectDate(date);
             endDate.val(date.toJSON());
         }
-
+        startDate.val(date.toJSON());
         arrivalDate = date;
     }
 
@@ -40,7 +55,12 @@
         if (arrivalDate && date < arrivalDate) {
             return;
         }
-
+        endDate.val(date.toJSON());
         departureDate = date;
     }
+
+    $('#room-category').change(function (item) {
+        $('#TypeId').val($(item.target).val());
+        console.log(item);
+    });
 })(jQuery);

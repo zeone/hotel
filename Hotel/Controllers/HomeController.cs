@@ -50,13 +50,26 @@ namespace Hotel.Controllers
         }
 
         [HttpGet]
-        public ActionResult Reservation(Reservation reserv)
+        public ActionResult Reservation(DateTime? indexStartDate, DateTime? indexEndDate, int? GuestCount)
         {
             NameValueCollection nvc = Request.Form;
-            var model = reserv;
-            return View();
+
+            var newReserv = new ReservationView()
+            {
+                StartDate = indexStartDate == null || indexStartDate.Value == DateTime.MinValue ? DateTime.Now : indexStartDate.Value,
+                EndDate = indexEndDate == null || indexEndDate.Value == DateTime.MinValue ? DateTime.Now : indexEndDate.Value,
+                GuestCount = GuestCount == null || GuestCount.Value == 0 ? 1 : GuestCount.Value
+            };
+            newReserv.Types = db.ApTypes.ToList();
+            return View(newReserv);
         }
 
+        [HttpPost]
+        public ActionResult Reservation(ReservationView reserv)
+        {
+
+            return RedirectToAction("Index");
+        }
 
         public ActionResult Rooms()
         {

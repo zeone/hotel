@@ -22,8 +22,11 @@
 
         var arrivalDatepicker = $('#arrival-date').datepicker().data('datepicker');
         var departureDatepicker = $('#departure-date').datepicker().data('datepicker');
-        startDate = $('#StartDate');
-        endDate = $('#EndDate');
+        //startDate = $('#StartDate');
+        //endDate = $('#EndDate');
+
+        startDate = $('#indexStartDate');
+        endDate = $('#indexEndDate');
         guestCount = $('#GuestCount');
         arrivalDatepicker.selectDate(new Date());
         departureDatepicker.selectDate(new Date());

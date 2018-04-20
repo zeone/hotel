@@ -77,5 +77,12 @@ namespace Hotel.Controllers
             return View();
         }
 
+        [HttpGet]
+
+        public JsonResult GetAppPrice(int apTypeId, int gusetCount)
+        {
+            var price = db.ApTypes.Find(apTypeId)?.Price;
+            return Json(price, JsonRequestBehavior.AllowGet);
+        }
     }
 }

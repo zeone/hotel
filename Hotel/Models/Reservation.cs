@@ -24,12 +24,9 @@ namespace Hotel.Models
         [Display(Name = "Статус")]
         public ReservationStatus Status { get; set; }
         [Required]
-        [Display(Name = "Ім'я")]
+        [Display(Name = "Ваше прiзвище та iмя")]
         public string Name { get; set; }
-        [Required]
-        [Display(Name = "Фамілія")]
-        public string Suname { get; set; }
-        [Required]
+
         [Display(Name = "e-mail")]
         public string Email { get; set; }
         [Required]
@@ -39,6 +36,10 @@ namespace Hotel.Models
         public decimal ReservationPriсe { get; set; }
         [Display(Name = "Кількість гостей")]
         public int GuestCount { get; set; }
+        [Display(Name = "Кількість дітей")]
+        public int ChildrenCount { get; set; }
+        [Display(Name = "Ваш коментар АБО побажання")]
+        public string Note { get; set; }
         public Apartment Apartment { get; set; }
     }
 }

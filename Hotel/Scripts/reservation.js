@@ -1,5 +1,5 @@
 (function ($) {
-    var arrivalDate, departureDate, startDate, endDate, departureDatepicker;
+    var arrivalDate, departureDate, startDate, endDate, departureDatepicker, rooms, guestCount, typeId, adultsCount, form;
 
     $(document).ready(function () {
         $('#arrival-date').datepicker({
@@ -15,11 +15,24 @@
 
         var arrivalDatepicker = $('#arrival-date').datepicker().data('datepicker');
         departureDatepicker = $('#departure-date').datepicker().data('datepicker');
-
+        //main obj for controller
         startDate = $('#StartDate');
         endDate = $('#EndDate');
+        typeId = $('#TypeId');
+        guestCount = $('#GuestCount');
 
 
+
+
+        rooms = $('#room-category');
+        adultsCount = $('#adults-amount');
+        form = $('.reservation-form');
+
+        //init values
+        typeId.val(1);
+        adultsCount.val(1);
+
+        updatePrice();
 
         if (startDate.length > 0) {
             var curDate = new Date(parseInt(startDate.val()));
@@ -40,6 +53,39 @@
         $('.reservation-select').chosen({
             disable_search: true
         });
+
+
+        function updatePrice() {
+            var appType = typeId.val();
+            var guests = guestCount.val();
+            $.getJSON('GetAppPrice',
+                {
+                    apTypeId: appType,
+                    gusetCount: guests
+                }, function (resp) {
+                    $('#room-price').val(resp);
+                });
+        }
+
+        $('#room-category').change(function (item) {
+            typeId.val($(item.target).val());
+            updatePrice();
+        });
+
+        $('#adults-amount').change(function (item) {
+            guestCount.val($(item.target).val());
+            // $('#results').load('@Url.Action("BookSearch", "Home")?name=' + name)
+            updatePrice();
+        });
+        $('#reservationBtn').click(function (e) {
+            e.preventDefault();
+            $('#Name').val($('#name').val());
+            $('#Email').val($('#name').val());
+            $('#PhoneNumber').val($('#phone').val());
+            $('#ChildrenCount').val($('#children-amount').val());
+            $('#Note').val($('#comment').val());
+            $('.reservation-form').submit();
+        })
     });
 
     function onArrivalDateSelect(formattedDate, date) {
@@ -59,8 +105,7 @@
         departureDate = date;
     }
 
-    $('#room-category').change(function (item) {
-        $('#TypeId').val($(item.target).val());
-        console.log(item);
-    });
+
+
+
 })(jQuery);

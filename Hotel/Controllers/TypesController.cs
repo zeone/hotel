@@ -80,7 +80,7 @@ namespace Hotel.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Edit([Bind(Include = "TypeId,Name,Price,Description,NumOfPerson")] ApType apType)
+        public async Task<ActionResult> Edit(ApType apType)
         {
             if (ModelState.IsValid)
             {

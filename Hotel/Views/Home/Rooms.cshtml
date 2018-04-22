@@ -1,4 +1,5 @@
-﻿
+﻿@using Hotel.Helpers
+@model IList<Hotel.Models.ApType>
 @{
     ViewBag.Title = "Rooms";
 }
@@ -21,44 +22,45 @@
         <div class="room-type-wrapper">
             <div class="room-type">
                 <div class="room-type-closed standard">
-                    <p class="room-type-closed__title">Стандарт Економ</p>
+                    <p class="room-type-closed__title">@Html.DisplayFor(r => r[0].Name)</p>
                     <div class="room-type-closed__amount-wrapper">
                         <div class="room-type-closed__amount room-type-closed__amount--one">
-                            - 800 грн
+                            @*@string.Format("{0:0.##}"Model[0].OnePersonPrice)*@
+                            - @Model[0].OnePersonPrice.ToShortString() грн
                         </div>
                         <div class="room-type-closed__amount room-type-closed__amount--two">
-                            - 1040 грн
+                            - @Model[0].TwoPersonPrice.ToShortString() грн
                         </div>
                     </div>
                     <button class="room-type-closed__btn">ДЕТАЛЬНiше</button>
                 </div>
                 <div class="room-type-opened">
-                    <p class="room-type-opened__title">Номери Стандарт Економ</p>
+                    <p class="room-type-opened__title">Номери @Html.DisplayFor(r => r[0].Name)</p>
                     <aside class="room-type-opened__close"></aside>
                     <div class="room-type-opened__main">
                         <div class="room-type-opened__info">
                             <div class="room-type-opened__info-amount-wrapper">
                                 <div class="room-type-opened__info-amount">
                                     <p class="room-type-opened__info-amount-text room-type-opened__info-amount-text-one">Одномісне розміщення</p>
-                                    <p class="room-type-opened__info-amount-price">1300 грн</p>
+                                    <p class="room-type-opened__info-amount-price">@Model[0].OnePersonPrice.ToShortString() грн</p>
                                 </div>
                                 <div class="room-type-opened__info-amount">
                                     <p class="room-type-opened__info-amount-text room-type-opened__info-amount-text-two">Двомісне розміщення</p>
-                                    <p class="room-type-opened__info-amount-price">1380 грн</p>
+                                    <p class="room-type-opened__info-amount-price">@Model[0].TwoPersonPrice.ToShortString() грн</p>
                                 </div>
                                 <div class="room-type-opened__info-amount">
                                     <p class="room-type-opened__info-amount-text room-type-opened__info-amount-text-three">Тримісне розміщення</p>
-                                    <p class="room-type-opened__info-amount-price">1730 грн</p>
+                                    <p class="room-type-opened__info-amount-price">@Model[0].ThreePersonPrice.ToShortString() грн</p>
                                 </div>
                                 <div class="room-type-opened__info-amount">
                                     <p class="room-type-opened__info-amount-text room-type-opened__info-amount-text-four">Чотиримісне розміщення</p>
-                                    <p class="room-type-opened__info-amount-price">1950 грн</p>
+                                    <p class="room-type-opened__info-amount-price">@Model[0].FourPersonPrice.ToShortString() грн</p>
                                 </div>
                             </div>
                             <div class="room-type-opened__info-description">
                                 <p class="room-type-opened__info-description-title">Опис:</p>
                                 <p class="room-type-opened__info-description-text">
-                                    Люкс покращеного планування - двокімнатний номер з балконом: вітальня з меблевим гарнітуром, спальна кімната з двоспальним ліжком  Окремий санвузол: унітаз, умивальник,  ванна, фен, рушники. Автономне опалення, круглодобово гаряча і холодна вода.  Супутникове телебачення, телевізор, холодильник,  безкоштовний Інтернет, телефон.
+                                    @Model[0].Description
                                 </p>
                             </div>
                         </div>
@@ -104,47 +106,47 @@
             </div>
             <div class="room-type">
                 <div class="room-type-closed standard-plus">
-                    <p class="room-type-closed__title">Стандарт Плюс</p>
+                    <p class="room-type-closed__title">@Html.DisplayFor(r => r[1].Name)</p>
                     <div class="room-type-closed__amount-wrapper">
                         <div class="room-type-closed__amount room-type-closed__amount--one">
-                            - 850 грн
+                            - @Model[1].OnePersonPrice.ToShortString() грн
                         </div>
                         <div class="room-type-closed__amount room-type-closed__amount--two">
-                            - 1090 грн
+                            - @Model[1].TwoPersonPrice.ToShortString()  грн
                         </div>
                         <div class="room-type-closed__amount room-type-closed__amount--three">
-                            - 1240 грн
+                            - @Model[1].ThreePersonPrice.ToShortString()  грн
                         </div>
                     </div>
                     <button class="room-type-closed__btn">ДЕТАЛЬНiше</button>
                 </div>
                 <div class="room-type-opened">
-                    <p class="room-type-opened__title">Номери Стандарт Плюс</p>
+                    <p class="room-type-opened__title">Номери @Html.DisplayFor(r => r[1].Name)</p>
                     <aside class="room-type-opened__close"></aside>
                     <div class="room-type-opened__main">
                         <div class="room-type-opened__info">
                             <div class="room-type-opened__info-amount-wrapper">
                                 <div class="room-type-opened__info-amount">
                                     <p class="room-type-opened__info-amount-text room-type-opened__info-amount-text-one">Одномісне розміщення</p>
-                                    <p class="room-type-opened__info-amount-price">1300 грн</p>
+                                    <p class="room-type-opened__info-amount-price">@Model[1].OnePersonPrice.ToShortString() грн</p>
                                 </div>
                                 <div class="room-type-opened__info-amount">
                                     <p class="room-type-opened__info-amount-text room-type-opened__info-amount-text-two">Двомісне розміщення</p>
-                                    <p class="room-type-opened__info-amount-price">1380 грн</p>
+                                    <p class="room-type-opened__info-amount-price">@Model[1].TwoPersonPrice.ToShortString() грн</p>
                                 </div>
                                 <div class="room-type-opened__info-amount">
                                     <p class="room-type-opened__info-amount-text room-type-opened__info-amount-text-three">Тримісне розміщення</p>
-                                    <p class="room-type-opened__info-amount-price">1730 грн</p>
+                                    <p class="room-type-opened__info-amount-price">@Model[1].ThreePersonPrice.ToShortString() грн</p>
                                 </div>
                                 <div class="room-type-opened__info-amount">
                                     <p class="room-type-opened__info-amount-text room-type-opened__info-amount-text-four">Чотиримісне розміщення</p>
-                                    <p class="room-type-opened__info-amount-price">1950 грн</p>
+                                    <p class="room-type-opened__info-amount-price">@Model[1].FourPersonPrice.ToShortString() грн</p>
                                 </div>
                             </div>
                             <div class="room-type-opened__info-description">
                                 <p class="room-type-opened__info-description-title">Опис:</p>
                                 <p class="room-type-opened__info-description-text">
-                                    Люкс покращеного планування - двокімнатний номер з балконом: вітальня з меблевим гарнітуром, спальна кімната з двоспальним ліжком  Окремий санвузол: унітаз, умивальник,  ванна, фен, рушники. Автономне опалення, круглодобово гаряча і холодна вода.  Супутникове телебачення, телевізор, холодильник,  безкоштовний Інтернет, телефон.
+                                    @Model[1].Description
                                 </p>
                             </div>
                         </div>
@@ -190,44 +192,44 @@
             </div>
             <div class="room-type">
                 <div class="room-type-closed semi-lux">
-                    <p class="room-type-closed__title">Напівлюкс</p>
+                    <p class="room-type-closed__title">@Html.DisplayFor(r => r[2].Name)</p>
                     <div class="room-type-closed__amount-wrapper">
                         <div class="room-type-closed__amount room-type-closed__amount--one">
-                            - 1025 грн
+                            - @Model[2].OnePersonPrice.ToShortString() грн
                         </div>
                         <div class="room-type-closed__amount room-type-closed__amount--two">
-                            - 1260 грн
+                            - @Model[2].TwoPersonPrice.ToShortString() грн
                         </div>
                         <div class="room-type-closed__amount room-type-closed__amount--three">
-                            - 1610 грн
+                            - @Model[2].ThreePersonPrice.ToShortString() грн
                         </div>
                         <div class="room-type-closed__amount room-type-closed__amount--four">
-                            - 1850 грн
+                            - @Model[2].FourPersonPrice.ToShortString() грн
                         </div>
                     </div>
                     <button class="room-type-closed__btn">ДЕТАЛЬНiше</button>
                 </div>
                 <div class="room-type-opened">
-                    <p class="room-type-opened__title">Номери Напівлюкс</p>
+                    <p class="room-type-opened__title">Номери @Html.DisplayFor(r => r[2].Name)</p>
                     <aside class="room-type-opened__close"></aside>
                     <div class="room-type-opened__main">
                         <div class="room-type-opened__info">
                             <div class="room-type-opened__info-amount-wrapper">
                                 <div class="room-type-opened__info-amount">
                                     <p class="room-type-opened__info-amount-text room-type-opened__info-amount-text-one">Одномісне розміщення</p>
-                                    <p class="room-type-opened__info-amount-price">1300 грн</p>
+                                    <p class="room-type-opened__info-amount-price">@Model[2].OnePersonPrice.ToShortString() грн</p>
                                 </div>
                                 <div class="room-type-opened__info-amount">
                                     <p class="room-type-opened__info-amount-text room-type-opened__info-amount-text-two">Двомісне розміщення</p>
-                                    <p class="room-type-opened__info-amount-price">1380 грн</p>
+                                    <p class="room-type-opened__info-amount-price">@Model[2].TwoPersonPrice.ToShortString() грн</p>
                                 </div>
                                 <div class="room-type-opened__info-amount">
                                     <p class="room-type-opened__info-amount-text room-type-opened__info-amount-text-three">Тримісне розміщення</p>
-                                    <p class="room-type-opened__info-amount-price">1730 грн</p>
+                                    <p class="room-type-opened__info-amount-price">@Model[2].ThreePersonPrice.ToShortString() грн</p>
                                 </div>
                                 <div class="room-type-opened__info-amount">
                                     <p class="room-type-opened__info-amount-text room-type-opened__info-amount-text-four">Чотиримісне розміщення</p>
-                                    <p class="room-type-opened__info-amount-price">1950 грн</p>
+                                    <p class="room-type-opened__info-amount-price">@Model[2].FourPersonPrice.ToShortString() грн</p>
                                 </div>
                             </div>
                             <div class="room-type-opened__info-description">
@@ -279,50 +281,50 @@
             </div>
             <div class="room-type">
                 <div class="room-type-closed lux">
-                    <p class="room-type-closed__title">Люкс</p>
+                    <p class="room-type-closed__title">@Html.DisplayFor(r => r[3].Name)</p>
                     <div class="room-type-closed__amount-wrapper">
                         <div class="room-type-closed__amount room-type-closed__amount--one">
-                            - 1200 грн
+                            - @Model[3].OnePersonPrice.ToShortString() грн
                         </div>
                         <div class="room-type-closed__amount room-type-closed__amount--two">
-                            - 1330 грн
+                            - @Model[3].TwoPersonPrice.ToShortString() грн
                         </div>
                         <div class="room-type-closed__amount room-type-closed__amount--three">
-                            - 1730 грн
+                            - @Model[3].ThreePersonPrice.ToShortString() грн
                         </div>
                         <div class="room-type-closed__amount room-type-closed__amount--four">
-                            - 1950 грн
+                            - @Model[3].FourPersonPrice.ToShortString() грн
                         </div>
                     </div>
                     <button class="room-type-closed__btn">ДЕТАЛЬНiше</button>
                 </div>
                 <div class="room-type-opened">
-                    <p class="room-type-opened__title">Номери Люкс</p>
+                    <p class="room-type-opened__title">Номери @Html.DisplayFor(r => r[3].Name)</p>
                     <aside class="room-type-opened__close"></aside>
                     <div class="room-type-opened__main">
                         <div class="room-type-opened__info">
                             <div class="room-type-opened__info-amount-wrapper">
                                 <div class="room-type-opened__info-amount">
                                     <p class="room-type-opened__info-amount-text room-type-opened__info-amount-text-one">Одномісне розміщення</p>
-                                    <p class="room-type-opened__info-amount-price">1300 грн</p>
+                                    <p class="room-type-opened__info-amount-price">@Model[3].OnePersonPrice.ToShortString() грн</p>
                                 </div>
                                 <div class="room-type-opened__info-amount">
                                     <p class="room-type-opened__info-amount-text room-type-opened__info-amount-text-two">Двомісне розміщення</p>
-                                    <p class="room-type-opened__info-amount-price">1380 грн</p>
+                                    <p class="room-type-opened__info-amount-price">@Model[3].TwoPersonPrice.ToShortString() грн</p>
                                 </div>
                                 <div class="room-type-opened__info-amount">
                                     <p class="room-type-opened__info-amount-text room-type-opened__info-amount-text-three">Тримісне розміщення</p>
-                                    <p class="room-type-opened__info-amount-price">1730 грн</p>
+                                    <p class="room-type-opened__info-amount-price">@Model[3].ThreePersonPrice.ToShortString() грн</p>
                                 </div>
                                 <div class="room-type-opened__info-amount">
                                     <p class="room-type-opened__info-amount-text room-type-opened__info-amount-text-four">Чотиримісне розміщення</p>
-                                    <p class="room-type-opened__info-amount-price">1950 грн</p>
+                                    <p class="room-type-opened__info-amount-price">@Model[3].FourPersonPrice.ToShortString() грн</p>
                                 </div>
                             </div>
                             <div class="room-type-opened__info-description">
                                 <p class="room-type-opened__info-description-title">Опис:</p>
                                 <p class="room-type-opened__info-description-text">
-                                    Люкс покращеного планування - двокімнатний номер з балконом: вітальня з меблевим гарнітуром, спальна кімната з двоспальним ліжком  Окремий санвузол: унітаз, умивальник,  ванна, фен, рушники. Автономне опалення, круглодобово гаряча і холодна вода.  Супутникове телебачення, телевізор, холодильник,  безкоштовний Інтернет, телефон.
+                                    @Model[3].Description
                                 </p>
                             </div>
                         </div>

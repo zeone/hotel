@@ -8,6 +8,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Hotel.Enums;
+using Hotel.Helpers;
 using Hotel.Models;
 
 namespace Hotel.Controllers
@@ -54,7 +55,7 @@ namespace Hotel.Controllers
         public async Task<ActionResult> Create([Bind(Include = "ReservationId,ApartmentId,StartDate,EndDate,Name,Suname,Email,PhoneNumber")] Reservation reservation)
         {
             reservation.Status = ReservationStatus.ReservedByUser;
-            reservation.ReservationPriсe = db.Apartments.Include(e => e.Type).First(r => r.ApartmentId == reservation.ApartmentId).Type.Price;
+            reservation.ReservationPriсe = PriceHelper.GetPrice(db.Apartments.Include(e => e.Type).First(r => r.ApartmentId == reservation.ApartmentId).Type, reservation.GuestCount);
             if (ModelState.IsValid)
             {
                 db.Reservations.Add(reservation);

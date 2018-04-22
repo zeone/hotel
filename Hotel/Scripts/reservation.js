@@ -1,5 +1,5 @@
 (function ($) {
-    var arrivalDate, departureDate, startDate, endDate, departureDatepicker, rooms, guestCount, typeId, adultsCount, form;
+    var arrivalDate, departureDate, startDate, endDate, departureDatepicker, rooms, guestCount, typeId, adultsCount, form, curDate;
 
     $(document).ready(function () {
         $('#arrival-date').datepicker({
@@ -35,14 +35,14 @@
         updatePrice();
 
         if (startDate.length > 0) {
-            var curDate = new Date(parseInt(startDate.val()));
+            curDate = new Date(parseInt(startDate.val()));
             arrivalDatepicker.selectDate(curDate);
         } else {
             arrivalDatepicker.selectDate(new Date());
         }
 
         if (endDate.length > 0) {
-            var curDate = new Date(parseInt(endDate.val()));
+            curDate = new Date(parseInt(endDate.val()));
             departureDatepicker.selectDate(curDate);
         } else {
             departureDatepicker.selectDate(new Date());
@@ -84,8 +84,9 @@
             $('#PhoneNumber').val($('#phone').val());
             $('#ChildrenCount').val($('#children-amount').val());
             $('#Note').val($('#comment').val());
+            $('#Email').val($('#email').val());
             $('.reservation-form').submit();
-        })
+        });
     });
 
     function onArrivalDateSelect(formattedDate, date) {

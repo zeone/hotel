@@ -3,24 +3,13 @@
 @{
     ViewBag.Title = "Редагування резерву";
 }
-<section class="banner" id="home-banner">
-    <div class="container">
+
+<section class="banner" id="about-banner">
+    <div class="container about-banner__container">
         <div class="banner-text">
-            <h1 class="banner-title">Вітаємо в Східниці</h1>
+            <h1 class="banner-title">Редагування резервування</h1>
             <hr class="banner-title-divider">
-            <h2 class="banner-subtitle">Ми робимо людей трішки щасливішими і здоровішими</h2>
         </div>
-        <div class="banner-actions">
-            <a href="/" class="button-green">
-                Детальніше
-            </a>
-            <a href="/" class="button-black">
-                Бронювання
-            </a>
-        </div>
-        <a class="banner-details">
-            Прокрутіть униз для деталей
-        </a>
     </div>
 </section>
 <section id="home-healing">
@@ -53,8 +42,8 @@
                             @Html.ValidationMessageFor(model => model.StartDate, "", new { @class = "text-danger" })
                         </div>
                     </div>
-                    @Html.HiddenFor(model=>model.Status)
-                    @Html.HiddenFor(model=>model.ReservationPriсe)
+                    @Html.HiddenFor(model => model.Status)
+                    @Html.HiddenFor(model => model.ReservationPriсe)
                     <div class="form-group">
                         @Html.LabelFor(model => model.EndDate, htmlAttributes: new { @class = "control-label col-md-2" })
                         <div class="col-md-10">
@@ -71,13 +60,6 @@
                         </div>
                     </div>
 
-                    <div class="form-group">
-                        @Html.LabelFor(model => model.Suname, htmlAttributes: new { @class = "control-label col-md-2" })
-                        <div class="col-md-10">
-                            @Html.EditorFor(model => model.Suname, new { htmlAttributes = new { @class = "form-control" } })
-                            @Html.ValidationMessageFor(model => model.Suname, "", new { @class = "text-danger" })
-                        </div>
-                    </div>
 
                     <div class="form-group">
                         @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-2" })
@@ -95,7 +77,7 @@
                         </div>
                     </div>
 
-                   <div class="form-group">
+                    <div class="form-group">
                         <div class="col-md-offset-2 col-md-10">
                             <input type="submit" value="Зберегти" class="btn btn-default" />
                             @Html.ActionLink("Повернутись", "Index")

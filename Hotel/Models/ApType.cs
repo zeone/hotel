@@ -14,8 +14,14 @@ namespace Hotel.Models
         [Display(Name = "Тип")]
         public string Name { get; set; }
         [Required]
-        [Display(Name = "Вартість")]
-        public decimal Price { get; set; }
+        [Display(Name = "Одномісне розміщення")]
+        public decimal OnePersonPrice { get; set; }
+        [Display(Name = "Двомісне розміщення")]
+        public decimal TwoPersonPrice { get; set; }
+        [Display(Name = "Тримісне розміщення")]
+        public decimal ThreePersonPrice { get; set; }
+        [Display(Name = "Чотиримісне розміщення")]
+        public decimal FourPersonPrice { get; set; }
         [Required]
         [Display(Name = "Опис")]
         public string Description { get; set; }

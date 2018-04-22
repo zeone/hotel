@@ -198,7 +198,10 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\DecimalHelper.cs" />
+    <Compile Include="Helpers\EmailHelper.cs" />
     <Compile Include="Helpers\FileUploadFormHelper.cs" />
+    <Compile Include="Helpers\PriceHelper.cs" />
     <Compile Include="Migrations\201803251439379_BaseDb.cs" />
     <Compile Include="Migrations\201803251439379_BaseDb.Designer.cs">
       <DependentUpon>201803251439379_BaseDb.cs</DependentUpon>
@@ -231,6 +234,10 @@
     <Compile Include="Migrations\201804201302072_AddedNoteToReservation.Designer.cs">
       <DependentUpon>201804201302072_AddedNoteToReservation.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201804221526054_ChangesInApTypePrices.cs" />
+    <Compile Include="Migrations\201804221526054_ChangesInApTypePrices.Designer.cs">
+      <DependentUpon>201804221526054_ChangesInApTypePrices.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Apartment.cs" />
@@ -244,6 +251,7 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\adminTable.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\chosen.css" />
@@ -449,6 +457,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201804201302072_AddedNoteToReservation.resx">
       <DependentUpon>201804201302072_AddedNoteToReservation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804221526054_ChangesInApTypePrices.resx">
+      <DependentUpon>201804221526054_ChangesInApTypePrices.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

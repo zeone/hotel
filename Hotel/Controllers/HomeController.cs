@@ -3,8 +3,11 @@ using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Data.Entity;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
+using Hotel.Enums;
+using Hotel.Helpers;
 using Hotel.Models;
 
 namespace Hotel.Controllers
@@ -12,6 +15,7 @@ namespace Hotel.Controllers
     public class HomeController : Controller
     {
         ApplicationDbContext db = new ApplicationDbContext();
+        EmailHelper emailHelper = new EmailHelper();
         public ActionResult Index()
         {
 
@@ -52,8 +56,6 @@ namespace Hotel.Controllers
         [HttpGet]
         public ActionResult Reservation(DateTime? indexStartDate, DateTime? indexEndDate, int? GuestCount)
         {
-            NameValueCollection nvc = Request.Form;
-
             var newReserv = new ReservationView()
             {
                 StartDate = indexStartDate == null || indexStartDate.Value == DateTime.MinValue ? DateTime.Now : indexStartDate.Value,
@@ -65,8 +67,32 @@ namespace Hotel.Controllers
         }
 
         [HttpPost]
-        public ActionResult Reservation(ReservationView reserv)
+        public async Task<ActionResult> Reservation(ReservationView reserv)
         {
+            // var appId = db.Apartments.FirstOrDefault(t => t.ApTypeId == reserv.TypeId).ApartmentId;
+            var appartment = db.Apartments.Include(r => r.Type).FirstOrDefault(r => r.ApTypeId == reserv.TypeId);
+            //   var price = db.ApTypes.FirstOrDefault(w => w.TypeId == reserv.TypeId).Price;
+            var reservation = new Reservation()
+            {
+                StartDate = reserv.StartDate,
+                GuestCount = reserv.GuestCount,
+                Name = reserv.Name,
+                EndDate = reserv.EndDate,
+                ApartmentId = appartment.ApartmentId,
+                ChildrenCount = reserv.ChildrenCount,
+                Note = reserv.Note,
+                PhoneNumber = reserv.PhoneNumber,
+                Status = ReservationStatus.ReservedByUser,
+                ReservationPriсe = PriceHelper.GetPrice(appartment.Type, reserv.GuestCount),
+                Email = reserv.Email
+            };
+            db.Reservations.Add(reservation);
+            await db.SaveChangesAsync();
+
+            reservation.Apartment =
+                db.Apartments.Include(r => r.Type).FirstOrDefault(r => r.ApTypeId == reserv.TypeId);
+            await Task.Run(() => emailHelper.SendEmail(reservation, Server));
+
 
             return RedirectToAction("Index");
         }
@@ -74,15 +100,17 @@ namespace Hotel.Controllers
         public ActionResult Rooms()
         {
 
-            return View();
+            return View(db.ApTypes.ToList());
         }
 
         [HttpGet]
 
         public JsonResult GetAppPrice(int apTypeId, int gusetCount)
         {
-            var price = db.ApTypes.Find(apTypeId)?.Price;
-            return Json(price, JsonRequestBehavior.AllowGet);
+            var type = db.ApTypes.Find(apTypeId);
+            return Json(PriceHelper.GetPrice(type, gusetCount), JsonRequestBehavior.AllowGet);
         }
+
+       
     }
 }

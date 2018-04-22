@@ -27,6 +27,7 @@
         @Html.Hidden("PhoneNumber")
         @Html.Hidden("ChildrenCount")
         @Html.Hidden("Note")
+        @Html.Hidden("Email")
         <p class="reservation-form__title">Зробiть бронювання</p>
         <label class="reservation-form__label">
             Категорія номеру
@@ -78,6 +79,10 @@
         <label class="reservation-form__label">
             Ваш контактний телефон
             <input id="phone" class="reservation-input">
+        </label>
+        <label class="reservation-form__label">
+            Ваш контактний e-mail(за бажанням)
+            <input id="email" class="reservation-input">
         </label>
         <label class="reservation-form__label">
             Ваш коментар АБО побажання

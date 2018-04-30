@@ -26,6 +26,12 @@ namespace Hotel
             );
 
             routes.MapRoute(
+                name: "NextPics",
+                url: "NextPics",
+                defaults: new { controller = "Home", action = "NextPics" }
+            );
+
+            routes.MapRoute(
                 name: "Contact",
                 url: "Contact",
                 defaults: new { controller = "Home", action = "Contact" }

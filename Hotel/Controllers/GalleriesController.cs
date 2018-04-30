@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Net;
@@ -61,19 +63,20 @@ namespace Hotel.Controllers
                     if (file != null && file.ContentLength > 0)
                     {
                         var originalDirectory =
-                            new System.IO.DirectoryInfo(
+                            new DirectoryInfo(
                                 $"{Server.MapPath(@"\")}Content\\img");
-                        string pathString = System.IO.Path.Combine(originalDirectory.ToString(),
+                        string pathString = Path.Combine(originalDirectory.ToString(),
                             "gallery");
-                        var fileName1 = System.IO.Path.GetFileName(file.FileName);
+                        var fileName1 = Path.GetFileName(file.FileName);
                         var extArr = fileName1.Split('.');
                         var fileExt = extArr[extArr.Length - 1];
-                        bool isExists = System.IO.Directory.Exists(pathString);
+                        bool isExists = Directory.Exists(pathString);
                         if (!isExists)
-                            System.IO.Directory.CreateDirectory(pathString);
+                            Directory.CreateDirectory(pathString);
                         fName += $".{fileExt}";
                         var path = $"{pathString}\\{fName}";
                         file.SaveAs(path);
+                        SaveThumbnailImage(file.InputStream, pathString, fName);
                         db.Gallery.Add(new Gallery() { ImgName = fName });
                         db.SaveChanges();
                     }
@@ -90,6 +93,17 @@ namespace Hotel.Controllers
                 return Json(new { Message = "Error in saving file" });
         }
 
+
+        void SaveThumbnailImage(Stream fileInputStream, string pathString, string fileName)
+        {
+            Image img = Image.FromStream(fileInputStream);
+            Image thumb = img.GetThumbnailImage(120, 120, () => false, IntPtr.Zero);
+            pathString = Path.Combine(pathString,
+                "thumb");
+            if (!Directory.Exists(pathString))
+                Directory.CreateDirectory(pathString);
+            thumb.Save($"{pathString}\\tumb_{fileName}");
+        }
 
 
         protected override void Dispose(bool disposing)

@@ -33,12 +33,18 @@ namespace Hotel.Controllers
             return View();
         }
 
+        [HttpGet]
         public ActionResult Gallery()
         {
-
-            return View(db.Gallery.ToList());
+            ViewBag.Count = db.Gallery.Count();
+            return View(db.Gallery.OrderBy(r=>r.ImgId).Take(10).ToList());
         }
 
+        [HttpGet]
+        public JsonResult NextPics(int nextCount)
+        {
+            return Json(db.Gallery.OrderBy(r => r.ImgId).Skip(nextCount - 10).Take(10), JsonRequestBehavior.AllowGet);
+        }
 
         public ActionResult Healing()
         {
@@ -111,6 +117,6 @@ namespace Hotel.Controllers
             return Json(PriceHelper.GetPrice(type, gusetCount), JsonRequestBehavior.AllowGet);
         }
 
-       
+
     }
 }

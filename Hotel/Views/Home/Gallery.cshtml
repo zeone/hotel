@@ -11,8 +11,11 @@
     <div id="gallery-wrapper">
         @foreach (var img in Model)
         {
-            <a class="gallery-thumbnail" href="~/Content/img/gallery/thumb/tumb_@img.ImgName">
-                <img class="gallery-image" src="~/Content/img/gallery/@img.ImgName" />
+            @*<a class="gallery-thumbnail" href="~/Content/img/gallery/thumb/tumb_@img.ImgName">
+                    <img class="gallery-image" src="~/Content/img/gallery/@img.ImgName" />
+                </a>*@
+            <a class="gallery-thumbnail" href="~/Content/img/gallery/@img.ImgName">
+                <img class="gallery-image" src="~/Content/img/gallery/thumb/tumb_@img.ImgName" />
             </a>
         }
     </div>
@@ -24,17 +27,40 @@
     <script src="~/Scripts/lightgallery.min.js"></script>
     <script type="text/javascript">
         $(document).ready(function () {
-            setGalleryHeight();
+           // setGalleryHeight();
             lightGallery(document.getElementById('gallery-wrapper'));
         });
 
         function setGalleryHeight() {
             var allImagesHeight = 0;
-            $('.gallery-thumbnail').each(function () {
+            var minHeight = 0;
+            var maxHeigth = 0;
+            var imgObjs = $('.gallery-thumbnail');
+            var indexer = 0;
+            var imgCount = imgObjs.length;
+
+            if (imgCount % 2 !== 0)
+                imgCount += 1;
+            var indexerStop = imgCount / 3;
+
+            imgObjs.each(function () {
                 allImagesHeight += $(this).outerHeight() + Number.parseInt($(this).css('margin-bottom'));
+                indexer += 1;
+                
+                if (indexer >= indexerStop) {
+                    indexer = 0;
+                    if (indexer <= minHeight || minHeight === 0) minHeight = allImagesHeight;
+                    if (allImagesHeight > maxHeigth) maxHeigth = allImagesHeight;
+                    allImagesHeight = 0;
+                }
             });
-            console.log(allImagesHeight);
-            $('#gallery-wrapper').height(allImagesHeight / 3 + 'px');
+            $('#gallery-wrapper').height((maxHeigth+minHeight)/2 + 'px');
+            //var allImagesHeight = 0;
+            //$('.gallery-thumbnail').each(function () {
+            //    allImagesHeight += $(this).outerHeight() + Number.parseInt($(this).css('margin-bottom'));
+            //});
+            //console.log(allImagesHeight);
+            //$('#gallery-wrapper').height(allImagesHeight / 3 + 'px');
         }
     </script>
 }

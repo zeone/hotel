@@ -43,6 +43,7 @@ namespace Hotel.Controllers
                 new System.IO.DirectoryInfo(
                     $"{Server.MapPath(@"\")}Content\\img\\gallery");
             System.IO.File.Delete($"{originalDirectory}\\{gallery.ImgName}");
+            DeleteTumb(gallery.ImgName);
             db.Gallery.Remove(gallery);
             await db.SaveChangesAsync();
             return RedirectToAction("Index");
@@ -97,15 +98,31 @@ namespace Hotel.Controllers
         void SaveThumbnailImage(Stream fileInputStream, string pathString, string fileName)
         {
             Image img = Image.FromStream(fileInputStream);
-            Image thumb = img.GetThumbnailImage(120, 120, () => false, IntPtr.Zero);
+
+
+            int X = img.Width;
+            int Y = img.Height;
+
+            int width = 370;
+            int height = (int)((width * Y) / X);
+
+
+            Image thumb = img.GetThumbnailImage(width, height, () => false, IntPtr.Zero);
+
             pathString = Path.Combine(pathString,
                 "thumb");
             if (!Directory.Exists(pathString))
                 Directory.CreateDirectory(pathString);
-            thumb.Save($"{pathString}\\tumb_{fileName}");
+            thumb.Save($"{pathString}\\tumb_{fileName}", System.Drawing.Imaging.ImageFormat.Jpeg);
         }
 
-
+        void DeleteTumb(string filename)
+        {
+            var originalDirectory =
+                new System.IO.DirectoryInfo(
+                    $"{Server.MapPath(@"\")}Content\\img\\gallery\\thumb");
+            System.IO.File.Delete($"{originalDirectory}\\tumb_{filename}");
+        }
         protected override void Dispose(bool disposing)
         {
             if (disposing)

@@ -15,7 +15,7 @@
                     nextCount: counter
                 }, function (resp) {
                     resp.forEach(function (item) {
-                        galObj.append('<a class="gallery-thumbnail" href="/Content/img/gallery/' + item.ImgName + '">' +
+                        galObj.append('<a class="gallery-thumbnail" href="/Content/img/gallery/thumb/tumb_' + item.ImgName + '">' +
                             '<img class="gallery-image" src="/Content/img/gallery/' + item.ImgName + '" />' +
                             '</a >');
                     });
@@ -37,7 +37,6 @@
         $('.gallery-thumbnail').each(function () {
             allImagesHeight += $(this).outerHeight() + Number.parseInt($(this).css('margin-bottom'));
         });
-        console.log(allImagesHeight);
         $('#gallery-wrapper').height(allImagesHeight / 3 + 'px');
     }
     function checkButton() {

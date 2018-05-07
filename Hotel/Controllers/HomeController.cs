@@ -37,13 +37,13 @@ namespace Hotel.Controllers
         public ActionResult Gallery()
         {
             ViewBag.Count = db.Gallery.Count();
-            return View(db.Gallery.OrderBy(r=>r.ImgId).Take(10).ToList());
+            return View(db.Gallery.OrderBy(r => r.ImgId).Take(9).ToList());
         }
 
         [HttpGet]
         public JsonResult NextPics(int nextCount)
         {
-            return Json(db.Gallery.OrderBy(r => r.ImgId).Skip(nextCount - 10).Take(10), JsonRequestBehavior.AllowGet);
+            return Json(db.Gallery.OrderBy(r => r.ImgId).Skip(nextCount - 9).Take(9), JsonRequestBehavior.AllowGet);
         }
 
         public ActionResult Healing()

@@ -1,5 +1,6 @@
 (function ($) {
     var arrivalDate, departureDate, startDate, endDate, departureDatepicker, rooms, guestCount, typeId, adultsCount, form, curDate;
+    var hasError = false;
 
     $(document).ready(function () {
         $('#arrival-date').datepicker({
@@ -77,7 +78,7 @@
             // $('#results').load('@Url.Action("BookSearch", "Home")?name=' + name)
             updatePrice();
         });
-        $('#reservationBtn').click(function (e) {
+        $('#reservation-button').click(function (e) {
             e.preventDefault();
             $('#Name').val($('#name').val());
             $('#Email').val($('#name').val());
@@ -85,6 +86,11 @@
             $('#ChildrenCount').val($('#children-amount').val());
             $('#Note').val($('#comment').val());
             $('#Email').val($('#email').val());
+            hasError = false;
+            checkRequiredFields();
+            if (hasError) {
+                return;
+            }
             $('.reservation-form').submit();
         });
     });
@@ -106,7 +112,51 @@
         departureDate = date;
     }
 
+    function checkRequiredFields() {
+        $('.with-validation').each(function () {
+            var validationLabel = $(this);
+            var emailInput = validationLabel.find('#email');
+            var phoneInput = validationLabel.find('#phone');
 
+            if (emailInput.length) {
+                var emailValue = emailInput.val().trim();
+                if (!validateEmail(emailValue)) {
+                    markWithError(validationLabel);
+                } else {
+                    removeErrorClass(validationLabel);
+                }
+            } else if (phoneInput.length) {
+                var phoneValue = phoneInput.val().trim();
+                if (!validatePhone(phoneValue)) {
+                    markWithError(validationLabel);
+                } else {
+                    removeErrorClass(validationLabel);
+                }
+            } else if (validationLabel.find('.reservation-input').val() === '') {
+                markWithError(validationLabel);
+            } else {
+                removeErrorClass(validationLabel);
+            }
+        });
+    }
 
+    function validateEmail(email) {
+        var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        return re.test(String(email).toLowerCase());
+    }
+
+    function validatePhone(phone) {
+        var re = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im;
+        return re.test(String(phone).toLowerCase());
+    }
+
+    function markWithError(label) {
+        hasError = true;
+        label.addClass('has-error');
+    }
+
+    function removeErrorClass(label) {
+        label.removeClass('has-error');
+    }
 
 })(jQuery);

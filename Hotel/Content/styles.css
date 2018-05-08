@@ -359,6 +359,16 @@
     top: auto;
     transform: rotate(45deg);
 }
+.validation-error {
+    display: none;
+    font-family: 'PT Sans', sans-serif;
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+}
+.with-validation.has-error .validation-error {
+    display: block;
+}
 #arrival-date,
 #departure-date {
     background: transparent;

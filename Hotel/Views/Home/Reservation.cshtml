@@ -39,13 +39,15 @@
             </select>
         </label>
         <div class="reservation-form__label-wrapper">
-            <label class="reservation-form__label reservation-form__label--half">
+            <label class="reservation-form__label reservation-form__label--half with-validation">
                 Дата заїзду
                 <input id="arrival-date" class="reservation-input">
+                <p class="validation-error">Це поле є обов'язковим.</p>
             </label>
-            <label class="reservation-form__label reservation-form__label--half">
+            <label class="reservation-form__label reservation-form__label--half with-validation">
                 Дата виїзду
                 <input id="departure-date" class="reservation-input">
+                <p class="validation-error">Це поле є обов'язковим.</p>
             </label>
         </div>
         <label class="reservation-form__label">
@@ -59,7 +61,7 @@
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
-                    <option value="3">4</option>
+                    <option value="4">4</option>
                 </select>
             </label>
             <label class="reservation-form__label reservation-form__label--half">
@@ -72,23 +74,26 @@
                 </select>
             </label>
         </div>
-        <label class="reservation-form__label">
+        <label class="reservation-form__label with-validation">
             Ваше прiзвище та iмя
             <input id="name" class="reservation-input">
+            <p class="validation-error">Це поле є обов'язковим.</p>
         </label>
-        <label class="reservation-form__label">
+        <label class="reservation-form__label with-validation">
             Ваш контактний телефон
             <input id="phone" class="reservation-input">
+            <p class="validation-error">Будь ласка введіть правильний формат телефону. Це поле є обов'язковим.</p>
         </label>
-        <label class="reservation-form__label">
-            Ваш контактний e-mail(за бажанням)
+        <label class="reservation-form__label with-validation">
+            Ваш контактний e-mail
             <input id="email" class="reservation-input">
+            <p class="validation-error">Будь ласка введіть правильний e-mail.</p>
         </label>
         <label class="reservation-form__label">
             Ваш коментар АБО побажання
             <textarea id="comment" class="reservation-input reservation-textarea"></textarea>
         </label>
-        <button id="reservationBtn" class="button-green reservation-button">забронювати</button>
+        <button id="reservation-button" class="button-green reservation-button">забронювати</button>
         @*</form>*@
     }
 </section>

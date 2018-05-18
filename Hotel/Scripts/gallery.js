@@ -45,8 +45,8 @@
         var indexer = 0;
         var imgCount = imgObjs.length;
 
-        if (imgCount % 2 !== 0)
-            imgCount += 1;
+        //if (imgCount % 2 !== 0)
+        //    imgCount += 1;
         var indexerStop = imgCount / 3;
 
         imgObjs.each(function () {

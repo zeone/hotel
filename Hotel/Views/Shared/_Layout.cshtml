@@ -32,28 +32,28 @@
             <div id="header-container">
                 <a id="header-logo" href="/">Зелений Бір: Оздоровчий комплекс</a>
                 <div id="header-main">
-                    <p class="header-link-text active">
+                    <p class="header-link-text rootPage">
                         <a href="/" class="header-link">Головна</a>
                     </p>
-                    <p class="header-link-text">
+                    <p class="header-link-text aboutPage">
                         <a href="about" class="header-link">Про нас</a>
                     </p>
-                    <p class="header-link-text">
+                    <p class="header-link-text galleryPage">
                         <a href="Gallery" class="header-link">Галерея</a>
                     </p>
-                    <p class="header-link-text">
+                    <p class="header-link-text healingPage">
                         <a href="Healing" class="header-link">Лiкування</a>
                     </p>
-                    <p class="header-link-text">
+                    <p class="header-link-text roomsPage">
                         <a href="Rooms" class="header-link">Номери</a>
                     </p>
-                    <p class="header-link-text">
+                    <p class="header-link-text pricePage">
                         <a href="Prices" class="header-link">Цiни</a>
                     </p>
-                    <p class="header-link-text">
+                    <p class="header-link-text reservPage">
                         <a href="Reservation" class="header-link">Бронювання</a>
                     </p>
-                    <p class="header-link-text">
+                    <p class="header-link-text contactPage">
                         <a href="Contact" class="header-link">Контакти</a>
                     </p>
 
@@ -62,16 +62,16 @@
                 {
                     <div style="width: 100%"></div>
                     <div id="admin-header-main">
-                        <p class="header-link-text">
+                        <p class="header-link-text typePage">
                             <a href="/types" class="header-link">Види номерів</a>
                         </p>
-                        <p class="header-link-text">
+                        <p class="header-link-text appartPage">
                             <a href="/apartments" class="header-link">Номери</a>
                         </p>
-                        <p class="header-link-text">
+                        <p class="header-link-text reservsPage">
                             <a href="/reservations" class="header-link">Резервування</a>
                         </p>
-                        <p class="header-link-text">
+                        <p class="header-link-text galPage">
                             <a href="/Galleries" class="header-link">Редагування галереї</a>
                         </p>
                     </div>
@@ -156,7 +156,47 @@
             var curLocation = currLink[currLink.length - 1];
             if (curLocation === "Gallery") {
                 $("#header-main").addClass("header-inverted");
+                $("#admin-header-main").addClass("header-inverted");
             }
+
+
+            if (curLocation === "") {
+                $(".rootPage").addClass("active");
+            }
+            if (curLocation === "about") {
+                $(".aboutPage").addClass("active");;
+            }
+            if (curLocation === "Gallery") {
+                $(".galleryPage").addClass("active");;
+            }
+            if (curLocation === "Healing") {
+                $(".healingPage").addClass("active");;
+            }
+            if (curLocation === "Rooms") {
+                $(".roomsPage").addClass("active");;
+            }
+            if (curLocation === "Prices") {
+                $(".pricePage").addClass("active");;
+            }
+            if (curLocation === "Reservation") {
+                $(".reservPage").addClass("active");;
+            }
+            if (curLocation === "Contact") {
+                $(".contactPage").addClass("active");;
+            }
+            if (curLocation === "types") {
+                $(".typePage").addClass("active");;
+            }
+            if (curLocation === "apartments") {
+                $(".appartPage").addClass("active");;
+            }
+            if (curLocation === "reservations") {
+                $(".reservsPage").addClass("active");;
+            }
+            if (curLocation === "Galleries") {
+                $(".galPage").addClass("active");;
+            }
+            console.log(curLocation);
         });
 
 

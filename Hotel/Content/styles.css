@@ -57,7 +57,7 @@
 #header-logo {
     max-width: 20%;
     display: block;
-    width: 150px;
+    width: 80px;
     height: 80px;
     background: url(img/common/logo.png) center no-repeat;
     background-size: contain;
@@ -111,7 +111,7 @@
 }
 #footer-logo {
     display: block;
-    width: 150px;
+    width: 80px;
     height: 80px;
     background: url(img/common/logo.png) center no-repeat;
     background-size: contain;

@@ -263,33 +263,66 @@
     <Content Include="Content\img\common\logo.png" />
     <Content Include="Content\img\common\trip-advisor.png" />
     <Content Include="Content\img\common\tw-icon.png" />
-    <Content Include="Content\img\gallery\006266de-93a6-4244-bc9d-72b8297a96a0.jpg" />
-    <Content Include="Content\img\gallery\00736866-2319-4977-a207-bcf7fe4d3eb6.jpg" />
-    <Content Include="Content\img\gallery\1d664465-0954-44ec-9c01-c44ee5f04d65.jpg" />
-    <Content Include="Content\img\gallery\66dd9fbd-6980-4de0-8c8f-3a7a578ff955.jpg" />
-    <Content Include="Content\img\gallery\738d502e-432b-4ff8-bc31-fae95966f23a.jpg" />
-    <Content Include="Content\img\gallery\8f6bf3dd-303a-45b5-bd7e-c36f67a7fe9e.jpg" />
-    <Content Include="Content\img\gallery\9dec44b7-9aa2-455b-b179-1508ace47dfa.jpg" />
-    <Content Include="Content\img\gallery\a6202d9e-0494-45bf-a289-2064646d749c.png" />
-    <Content Include="Content\img\gallery\fafbc3b7-f9df-4bc8-b54c-0a163fac4242.jpg" />
     <Content Include="Content\img\gallery\loope.png" />
-    <Content Include="Content\img\gallery\thumb\tumb_006266de-93a6-4244-bc9d-72b8297a96a0.jpg" />
-    <Content Include="Content\img\gallery\thumb\tumb_00736866-2319-4977-a207-bcf7fe4d3eb6.jpg" />
-    <Content Include="Content\img\gallery\thumb\tumb_1d664465-0954-44ec-9c01-c44ee5f04d65.jpg" />
-    <Content Include="Content\img\gallery\thumb\tumb_66dd9fbd-6980-4de0-8c8f-3a7a578ff955.jpg" />
-    <Content Include="Content\img\gallery\thumb\tumb_738d502e-432b-4ff8-bc31-fae95966f23a.jpg" />
-    <Content Include="Content\img\gallery\thumb\tumb_8f6bf3dd-303a-45b5-bd7e-c36f67a7fe9e.jpg" />
-    <Content Include="Content\img\gallery\thumb\tumb_9dec44b7-9aa2-455b-b179-1508ace47dfa.jpg" />
-    <Content Include="Content\img\gallery\thumb\tumb_a6202d9e-0494-45bf-a289-2064646d749c.png" />
-    <Content Include="Content\img\gallery\thumb\tumb_fafbc3b7-f9df-4bc8-b54c-0a163fac4242.jpg" />
     <Content Include="Content\img\home\arrows-down.png" />
     <Content Include="Content\img\home\banner-bg.jpg" />
     <Content Include="Content\img\home\healing-1.jpg" />
     <Content Include="Content\img\home\healing-2.jpg" />
     <Content Include="Content\img\home\healing-3.jpg" />
+    <Content Include="Content\img\rooms\1-person-sm.png" />
+    <Content Include="Content\img\rooms\1-person.png" />
+    <Content Include="Content\img\rooms\2-person-sm.png" />
+    <Content Include="Content\img\rooms\2-person.png" />
+    <Content Include="Content\img\rooms\3-person-sm.png" />
+    <Content Include="Content\img\rooms\3-person.png" />
+    <Content Include="Content\img\rooms\4-person-sm.png" />
+    <Content Include="Content\img\rooms\4-person.png" />
+    <Content Include="Content\img\rooms\banner-bg.jpg" />
+    <Content Include="Content\img\rooms\close.png" />
+    <Content Include="Content\img\rooms\halfLux1type3.jpg" />
+    <Content Include="Content\img\rooms\loope.png" />
+    <Content Include="Content\img\rooms\lux1type4.jpg" />
+    <Content Include="Content\img\rooms\room-photos\1.jpg" />
+    <Content Include="Content\img\rooms\room-photos\2.jpg" />
+    <Content Include="Content\img\rooms\room-photos\3.jpg" />
+    <Content Include="Content\img\rooms\room-photos\halfLux1.jpg" />
+    <Content Include="Content\img\rooms\room-photos\halfLux1tumb.jpg" />
+    <Content Include="Content\img\rooms\room-photos\halfLux2.jpg" />
+    <Content Include="Content\img\rooms\room-photos\halfLux2tumb.jpg" />
+    <Content Include="Content\img\rooms\room-photos\lux1.jpg" />
+    <Content Include="Content\img\rooms\room-photos\lux1tumb.jpg" />
+    <Content Include="Content\img\rooms\room-photos\lux3.jpg" />
+    <Content Include="Content\img\rooms\room-photos\lux3tumb.jpg" />
+    <Content Include="Content\img\rooms\room-photos\lux4.jpg" />
+    <Content Include="Content\img\rooms\room-photos\lux4tumb.jpg" />
+    <Content Include="Content\img\rooms\room-photos\lux5.jpg" />
+    <Content Include="Content\img\rooms\room-photos\lux5tumb.jpg" />
+    <Content Include="Content\img\rooms\room-photos\lux6.jpg" />
+    <Content Include="Content\img\rooms\room-photos\lux6tumb.jpg" />
+    <Content Include="Content\img\rooms\room-photos\standart1.jpg" />
+    <Content Include="Content\img\rooms\room-photos\standart1tumb.jpg" />
+    <Content Include="Content\img\rooms\room-photos\standart2.jpg" />
+    <Content Include="Content\img\rooms\room-photos\standart2tumb.jpg" />
+    <Content Include="Content\img\rooms\room-photos\standart3.jpg" />
+    <Content Include="Content\img\rooms\room-photos\standart3tumb.jpg" />
+    <Content Include="Content\img\rooms\room-photos\standart4 tumb.jpg" />
+    <Content Include="Content\img\rooms\room-photos\standart4.jpg" />
+    <Content Include="Content\img\rooms\room-photos\standatdPlus1.jpg" />
+    <Content Include="Content\img\rooms\room-photos\standatdPlus1tumb.jpg" />
+    <Content Include="Content\img\rooms\standatdPlus1type2.jpg" />
+    <Content Include="Content\img\rooms\room-photos\standatdPlus2.jpg" />
+    <Content Include="Content\img\rooms\room-photos\standatdPlus2tumb.jpg" />
+    <Content Include="Content\img\rooms\room-photos\standatdPlus3.jpg" />
+    <Content Include="Content\img\rooms\room-photos\standatdPlus3tumb.jpg" />
+    <Content Include="Content\img\rooms\standart1type1.jpg" />
+    <Content Include="Content\img\rooms\type-1.jpg" />
+    <Content Include="Content\img\rooms\type-2.jpg" />
+    <Content Include="Content\img\rooms\type-3.jpg" />
+    <Content Include="Content\img\rooms\type-4.jpg" />
     <Content Include="Content\lightgallery-fonts\lg.svg" />
     <Content Include="Content\lightgallery.css" />
     <Content Include="Content\normalize.css" />
+    <Content Include="Content\number.css" />
     <Content Include="Content\slick.css" />
     <Content Include="Content\styles.css" />
     <Content Include="favicon.ico" />
@@ -322,6 +355,7 @@
     <Content Include="Content\lightgallery-fonts\lg.eot" />
     <Content Include="Content\lightgallery-fonts\lg.ttf" />
     <Content Include="Content\lightgallery-fonts\lg.woff" />
+    <Content Include="db-app.config" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\chosen.jquery.min.js" />
@@ -371,7 +405,9 @@
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\rooms.js" />
     <Content Include="Scripts\slick.min.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -430,6 +466,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Content\img\gallery\thumb\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

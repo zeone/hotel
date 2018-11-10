@@ -106,8 +106,8 @@ namespace Hotel.Controllers
             int width = 370;
             int height = (int)((width * Y) / X);
 
-
-            Image thumb = img.GetThumbnailImage(width, height, () => false, IntPtr.Zero);
+            Image thumb = new Bitmap(img,new Size(width,height));
+           // Image thumb = img.GetThumbnailImage(width, height, () => false, IntPtr.Zero);
 
             pathString = Path.Combine(pathString,
                 "thumb");

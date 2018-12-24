@@ -8,6 +8,7 @@ using System.Net.Mail;
 using System.Web;
 using Hotel.Models;
 using System.Web.Configuration;
+using System.Threading.Tasks;
 
 namespace Hotel.Helpers
 {
@@ -42,7 +43,7 @@ namespace Hotel.Helpers
             SendEmail(from, to, message);
         }
 
-        void SendEmail(string from, string to, MailMessage message)
+        async void SendEmail(string from, string to, MailMessage message)
         {
             var pass = WebConfigurationManager.AppSettings["emailPass"];
             var server = WebConfigurationManager.AppSettings["emailSmtp"];
@@ -52,12 +53,12 @@ namespace Hotel.Helpers
             {
                 Host = server,
                 Port = Int32.Parse(port),
-                EnableSsl = true,
+                EnableSsl = false,
                 DeliveryMethod = SmtpDeliveryMethod.Network,
                 Credentials = new NetworkCredential(from, pass),
-                UseDefaultCredentials = false
+              //  UseDefaultCredentials = false
             };
-
+            client.Send(message);
 
         }
         string EmailBody(Reservation reserv, HttpServerUtilityBase server)
@@ -70,7 +71,7 @@ namespace Hotel.Helpers
                 var body = File.ReadAllText(bodyFile);
                 body = body.Replace("{name}", string.IsNullOrEmpty(reserv.Name) ? "" : reserv.Name);
                 body = body.Replace("{aptype}", string.IsNullOrEmpty(reserv.Apartment.Type.Name) ? "" : reserv.Apartment.Type.Name);
-                body = body.Replace("{startDate}", reserv.StartDate == DateTime.MinValue ? "" : reserv.StartDate.ToString("D",culture));
+                body = body.Replace("{startDate}", reserv.StartDate == DateTime.MinValue ? "" : reserv.StartDate.ToString("D", culture));
                 body = body.Replace("{endDate}", reserv.EndDate == DateTime.MinValue ? "" : reserv.EndDate.ToString("D", culture));
                 body = body.Replace("{phone}", string.IsNullOrEmpty(reserv.PhoneNumber) ? "" : reserv.PhoneNumber);
                 body = body.Replace("{note}", string.IsNullOrEmpty(reserv.Note) ? "" : reserv.Note);

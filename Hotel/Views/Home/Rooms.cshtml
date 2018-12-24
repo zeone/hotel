@@ -10,10 +10,10 @@
             <h1 class="banner-title">Цiни на номери</h1>
             <hr class="banner-title-divider">
             @*<h2 class="banner-subtitle">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit,<br>
-                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. <br>
-                Ut enim ad minim veniam
-            </h2>*@
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit,<br>
+                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. <br>
+                    Ut enim ad minim veniam
+                </h2>*@
         </div>
     </div>
 </section>
@@ -40,22 +40,42 @@
                     <div class="room-type-opened__main">
                         <div class="room-type-opened__info">
                             <div class="room-type-opened__info-amount-wrapper">
-                                <div class="room-type-opened__info-amount">
-                                    <p class="room-type-opened__info-amount-text room-type-opened__info-amount-text-one">Одномісне розміщення</p>
-                                    <p class="room-type-opened__info-amount-price">@Model[0].OnePersonPrice.ToShortString() грн</p>
-                                </div>
-                                <div class="room-type-opened__info-amount">
-                                    <p class="room-type-opened__info-amount-text room-type-opened__info-amount-text-two">Двомісне розміщення</p>
-                                    <p class="room-type-opened__info-amount-price">@Model[0].TwoPersonPrice.ToShortString() грн</p>
-                                </div>
-                                <div class="room-type-opened__info-amount">
-                                    <p class="room-type-opened__info-amount-text room-type-opened__info-amount-text-three">Тримісне розміщення</p>
-                                    <p class="room-type-opened__info-amount-price">@Model[0].ThreePersonPrice.ToShortString() грн</p>
-                                </div>
-                                <div class="room-type-opened__info-amount">
-                                    <p class="room-type-opened__info-amount-text room-type-opened__info-amount-text-four">Чотиримісне розміщення</p>
-                                    <p class="room-type-opened__info-amount-price">@Model[0].FourPersonPrice.ToShortString() грн</p>
-                                </div>
+                                @{
+                                    if (@Model[0].OnePersonPrice != 0)
+                                    {
+                                        <div class="room-type-opened__info-amount">
+                                            <p class="room-type-opened__info-amount-text room-type-opened__info-amount-text-one">Одномісне розміщення</p>
+                                            <p class="room-type-opened__info-amount-price">@Model[0].OnePersonPrice.ToShortString() грн</p>
+                                        </div>
+                                    }
+                                }
+                                @{
+                                    if (@Model[0].TwoPersonPrice != 0)
+                                    {
+                                        <div class="room-type-opened__info-amount">
+                                            <p class="room-type-opened__info-amount-text room-type-opened__info-amount-text-two">Двомісне розміщення</p>
+                                            <p class="room-type-opened__info-amount-price">@Model[0].TwoPersonPrice.ToShortString() грн</p>
+                                        </div>
+                                    }
+                                }
+                                @{
+                                    if (@Model[0].ThreePersonPrice != 0)
+                                    {
+                                        <div class="room-type-opened__info-amount">
+                                            <p class="room-type-opened__info-amount-text room-type-opened__info-amount-text-three">Тримісне розміщення</p>
+                                            <p class="room-type-opened__info-amount-price">@Model[0].ThreePersonPrice.ToShortString() грн</p>
+                                        </div>
+                                    }
+                                }
+                                @{
+                                    if (@Model[0].FourPersonPrice != 0)
+                                    {
+                                        <div class="room-type-opened__info-amount">
+                                            <p class="room-type-opened__info-amount-text room-type-opened__info-amount-text-four">Чотиримісне розміщення</p>
+                                            <p class="room-type-opened__info-amount-price">@Model[0].FourPersonPrice.ToShortString() грн</p>
+                                        </div>
+                                    }
+                                }
                             </div>
                             <div class="room-type-opened__info-description">
                                 <p class="room-type-opened__info-description-title">Опис:</p>
@@ -103,15 +123,37 @@
                 <div class="room-type-closed standard-plus">
                     <p class="room-type-closed__title">@Html.DisplayFor(r => r[1].Name)</p>
                     <div class="room-type-closed__amount-wrapper">
-                        <div class="room-type-closed__amount room-type-closed__amount--one">
-                            - @Model[1].OnePersonPrice.ToShortString() грн
-                        </div>
-                        <div class="room-type-closed__amount room-type-closed__amount--two">
-                            - @Model[1].TwoPersonPrice.ToShortString()  грн
-                        </div>
-                        <div class="room-type-closed__amount room-type-closed__amount--three">
-                            - @Model[1].ThreePersonPrice.ToShortString()  грн
-                        </div>
+                        @{
+                            if (@Model[1].OnePersonPrice != 0)
+                            {
+                                <div class="room-type-closed__amount room-type-closed__amount--one">
+                                    - @Model[1].OnePersonPrice.ToShortString() грн
+                                </div>
+                            }
+                        }
+                        @{
+                            if (@Model[1].TwoPersonPrice != 0)
+                            {
+                                <div class="room-type-closed__amount room-type-closed__amount--two">
+                                    - @Model[1].TwoPersonPrice.ToShortString()  грн
+                                </div>
+                            }
+                        }
+                        @{
+                            if (@Model[1].TwoPersonPrice != 0)
+                            {
+                                <div class="room-type-closed__amount room-type-closed__amount--three">
+                                    - @Model[1].ThreePersonPrice.ToShortString()  грн
+                                </div>
+                            }
+                        }
+                        @{
+                            if (@Model[1].FourPersonPrice != 0)
+                            {
+                                <div class="room-type-closed__amount room-type-closed__amount--four">
+                                    - @Model[1].FourPersonPrice.ToShortString() грн
+                                </div>}
+                        }
                     </div>
                     <button class="room-type-closed__btn">ДЕТАЛЬНiше</button>
                 </div>
@@ -121,22 +163,43 @@
                     <div class="room-type-opened__main">
                         <div class="room-type-opened__info">
                             <div class="room-type-opened__info-amount-wrapper">
-                                <div class="room-type-opened__info-amount">
-                                    <p class="room-type-opened__info-amount-text room-type-opened__info-amount-text-one">Одномісне розміщення</p>
-                                    <p class="room-type-opened__info-amount-price">@Model[1].OnePersonPrice.ToShortString() грн</p>
-                                </div>
-                                <div class="room-type-opened__info-amount">
-                                    <p class="room-type-opened__info-amount-text room-type-opened__info-amount-text-two">Двомісне розміщення</p>
-                                    <p class="room-type-opened__info-amount-price">@Model[1].TwoPersonPrice.ToShortString() грн</p>
-                                </div>
-                                <div class="room-type-opened__info-amount">
-                                    <p class="room-type-opened__info-amount-text room-type-opened__info-amount-text-three">Тримісне розміщення</p>
-                                    <p class="room-type-opened__info-amount-price">@Model[1].ThreePersonPrice.ToShortString() грн</p>
-                                </div>
-                                <div class="room-type-opened__info-amount">
-                                    <p class="room-type-opened__info-amount-text room-type-opened__info-amount-text-four">Чотиримісне розміщення</p>
-                                    <p class="room-type-opened__info-amount-price">@Model[1].FourPersonPrice.ToShortString() грн</p>
-                                </div>
+                                @{
+                                    if (@Model[1].OnePersonPrice != 0)
+                                    {
+                                        <div class="room-type-opened__info-amount">
+                                            <p class="room-type-opened__info-amount-text room-type-opened__info-amount-text-one">Одномісне розміщення</p>
+                                            <p class="room-type-opened__info-amount-price">@Model[1].OnePersonPrice.ToShortString() грн</p>
+                                        </div>
+                                    }
+                                }
+                                @{
+                                    if (@Model[1].TwoPersonPrice != 0)
+                                    {
+                                        <div class="room-type-opened__info-amount">
+                                            <p class="room-type-opened__info-amount-text room-type-opened__info-amount-text-two">Двомісне розміщення</p>
+                                            <p class="room-type-opened__info-amount-price">@Model[1].TwoPersonPrice.ToShortString() грн</p>
+                                        </div>
+                                    }
+                                }
+                                @{
+                                    if (@Model[1].ThreePersonPrice != 0)
+                                    {
+                                        <div class="room-type-opened__info-amount">
+                                            <p class="room-type-opened__info-amount-text room-type-opened__info-amount-text-three">Тримісне розміщення</p>
+                                            <p class="room-type-opened__info-amount-price">@Model[1].ThreePersonPrice.ToShortString() грн</p>
+                                        </div>
+                                    }
+                                }
+                                @{
+                                    if (@Model[1].FourPersonPrice != 0)
+                                    {
+                                        <div class="room-type-opened__info-amount">
+                                            <p class="room-type-opened__info-amount-text room-type-opened__info-amount-text-four">Чотиримісне розміщення</p>
+                                            <p class="room-type-opened__info-amount-price">@Model[1].FourPersonPrice.ToShortString() грн</p>
+                                        </div>
+                                    }
+                                }
+
                             </div>
                             <div class="room-type-opened__info-description">
                                 <p class="room-type-opened__info-description-title">Опис:</p>
@@ -167,18 +230,37 @@
                 <div class="room-type-closed semi-lux">
                     <p class="room-type-closed__title">@Html.DisplayFor(r => r[2].Name)</p>
                     <div class="room-type-closed__amount-wrapper">
-                        <div class="room-type-closed__amount room-type-closed__amount--one">
-                            - @Model[2].OnePersonPrice.ToShortString() грн
-                        </div>
-                        <div class="room-type-closed__amount room-type-closed__amount--two">
-                            - @Model[2].TwoPersonPrice.ToShortString() грн
-                        </div>
-                        <div class="room-type-closed__amount room-type-closed__amount--three">
-                            - @Model[2].ThreePersonPrice.ToShortString() грн
-                        </div>
-                        <div class="room-type-closed__amount room-type-closed__amount--four">
-                            - @Model[2].FourPersonPrice.ToShortString() грн
-                        </div>
+                        @{
+                            if (@Model[2].OnePersonPrice != 0)
+                            {
+                                <div class="room-type-closed__amount room-type-closed__amount--one">
+                                    - @Model[2].OnePersonPrice.ToShortString() грн
+                                </div>
+                            }
+                        }
+                        @{
+                            if (@Model[2].TwoPersonPrice != 0)
+                            {
+                                <div class="room-type-closed__amount room-type-closed__amount--two">
+                                    - @Model[2].TwoPersonPrice.ToShortString() грн
+                                </div>
+                            }
+                        }
+                        @{
+                            if (@Model[2].ThreePersonPrice != 0)
+                            {
+                                <div class="room-type-closed__amount room-type-closed__amount--three">
+                                    - @Model[2].ThreePersonPrice.ToShortString() грн
+                                </div>
+                            }
+                        }
+                        @{
+                            if (@Model[2].FourPersonPrice != 0)
+                            {
+                                <div class="room-type-closed__amount room-type-closed__amount--four">
+                                    - @Model[2].FourPersonPrice.ToShortString() грн
+                                </div>}
+                        }
                     </div>
                     <button class="room-type-closed__btn">ДЕТАЛЬНiше</button>
                 </div>
@@ -188,22 +270,42 @@
                     <div class="room-type-opened__main">
                         <div class="room-type-opened__info">
                             <div class="room-type-opened__info-amount-wrapper">
-                                <div class="room-type-opened__info-amount">
-                                    <p class="room-type-opened__info-amount-text room-type-opened__info-amount-text-one">Одномісне розміщення</p>
-                                    <p class="room-type-opened__info-amount-price">@Model[2].OnePersonPrice.ToShortString() грн</p>
-                                </div>
-                                <div class="room-type-opened__info-amount">
-                                    <p class="room-type-opened__info-amount-text room-type-opened__info-amount-text-two">Двомісне розміщення</p>
-                                    <p class="room-type-opened__info-amount-price">@Model[2].TwoPersonPrice.ToShortString() грн</p>
-                                </div>
-                                <div class="room-type-opened__info-amount">
-                                    <p class="room-type-opened__info-amount-text room-type-opened__info-amount-text-three">Тримісне розміщення</p>
-                                    <p class="room-type-opened__info-amount-price">@Model[2].ThreePersonPrice.ToShortString() грн</p>
-                                </div>
-                                <div class="room-type-opened__info-amount">
-                                    <p class="room-type-opened__info-amount-text room-type-opened__info-amount-text-four">Чотиримісне розміщення</p>
-                                    <p class="room-type-opened__info-amount-price">@Model[2].FourPersonPrice.ToShortString() грн</p>
-                                </div>
+                                @{
+                                    if (@Model[2].OnePersonPrice != 0)
+                                    {
+                                        <div class="room-type-opened__info-amount">
+                                            <p class="room-type-opened__info-amount-text room-type-opened__info-amount-text-one">Одномісне розміщення</p>
+                                            <p class="room-type-opened__info-amount-price">@Model[2].OnePersonPrice.ToShortString() грн</p>
+                                        </div>
+                                    }
+                                }
+                                @{
+                                    if (@Model[2].TwoPersonPrice != 0)
+                                    {
+                                        <div class="room-type-opened__info-amount">
+                                            <p class="room-type-opened__info-amount-text room-type-opened__info-amount-text-two">Двомісне розміщення</p>
+                                            <p class="room-type-opened__info-amount-price">@Model[2].TwoPersonPrice.ToShortString() грн</p>
+                                        </div>
+                                    }
+                                }
+                                @{
+                                    if (@Model[2].ThreePersonPrice != 0)
+                                    {
+                                        <div class="room-type-opened__info-amount">
+                                            <p class="room-type-opened__info-amount-text room-type-opened__info-amount-text-three">Тримісне розміщення</p>
+                                            <p class="room-type-opened__info-amount-price">@Model[2].ThreePersonPrice.ToShortString() грн</p>
+                                        </div>
+                                    }
+                                }
+                                @{
+                                    if (@Model[2].FourPersonPrice != 0)
+                                    {
+                                        <div class="room-type-opened__info-amount">
+                                            <p class="room-type-opened__info-amount-text room-type-opened__info-amount-text-four">Чотиримісне розміщення</p>
+                                            <p class="room-type-opened__info-amount-price">@Model[2].FourPersonPrice.ToShortString() грн</p>
+                                        </div>
+                                    }
+                                }
                             </div>
                             <div class="room-type-opened__info-description">
                                 <p class="room-type-opened__info-description-title">Опис:</p>
@@ -256,18 +358,38 @@
                 <div class="room-type-closed lux">
                     <p class="room-type-closed__title">@Html.DisplayFor(r => r[3].Name)</p>
                     <div class="room-type-closed__amount-wrapper">
-                        <div class="room-type-closed__amount room-type-closed__amount--one">
-                            - @Model[3].OnePersonPrice.ToShortString() грн
-                        </div>
-                        <div class="room-type-closed__amount room-type-closed__amount--two">
-                            - @Model[3].TwoPersonPrice.ToShortString() грн
-                        </div>
-                        <div class="room-type-closed__amount room-type-closed__amount--three">
-                            - @Model[3].ThreePersonPrice.ToShortString() грн
-                        </div>
-                        <div class="room-type-closed__amount room-type-closed__amount--four">
-                            - @Model[3].FourPersonPrice.ToShortString() грн
-                        </div>
+                        @{
+                            if (@Model[3].OnePersonPrice != 0)
+                            {
+                                <div class="room-type-closed__amount room-type-closed__amount--one">
+                                    - @Model[3].OnePersonPrice.ToShortString() грн
+                                </div>
+                            }
+                        }
+                        @{
+                            if (@Model[3].TwoPersonPrice != 0)
+                            {
+                                <div class="room-type-closed__amount room-type-closed__amount--two">
+                                    - @Model[3].TwoPersonPrice.ToShortString() грн
+                                </div>
+                            }
+                        }
+                        @{
+                            if (@Model[3].ThreePersonPrice != 0)
+                            {
+                                <div class="room-type-closed__amount room-type-closed__amount--three">
+                                    - @Model[3].ThreePersonPrice.ToShortString() грн
+                                </div>
+                            }
+                        }
+                        @{
+                            if (@Model[3].FourPersonPrice != 0)
+                            {
+                                <div class="room-type-closed__amount room-type-closed__amount--four">
+                                    - @Model[3].FourPersonPrice.ToShortString() грн
+                                </div>
+                            }
+                        }
                     </div>
                     <button class="room-type-closed__btn">ДЕТАЛЬНiше</button>
                 </div>
@@ -277,22 +399,43 @@
                     <div class="room-type-opened__main">
                         <div class="room-type-opened__info">
                             <div class="room-type-opened__info-amount-wrapper">
-                                <div class="room-type-opened__info-amount">
-                                    <p class="room-type-opened__info-amount-text room-type-opened__info-amount-text-one">Одномісне розміщення</p>
-                                    <p class="room-type-opened__info-amount-price">@Model[3].OnePersonPrice.ToShortString() грн</p>
-                                </div>
-                                <div class="room-type-opened__info-amount">
-                                    <p class="room-type-opened__info-amount-text room-type-opened__info-amount-text-two">Двомісне розміщення</p>
-                                    <p class="room-type-opened__info-amount-price">@Model[3].TwoPersonPrice.ToShortString() грн</p>
-                                </div>
-                                <div class="room-type-opened__info-amount">
-                                    <p class="room-type-opened__info-amount-text room-type-opened__info-amount-text-three">Тримісне розміщення</p>
-                                    <p class="room-type-opened__info-amount-price">@Model[3].ThreePersonPrice.ToShortString() грн</p>
-                                </div>
-                                <div class="room-type-opened__info-amount">
-                                    <p class="room-type-opened__info-amount-text room-type-opened__info-amount-text-four">Чотиримісне розміщення</p>
-                                    <p class="room-type-opened__info-amount-price">@Model[3].FourPersonPrice.ToShortString() грн</p>
-                                </div>
+                                @{
+                                    if (@Model[3].OnePersonPrice != 0)
+                                    {
+                                        <div class="room-type-opened__info-amount">
+                                            <p class="room-type-opened__info-amount-text room-type-opened__info-amount-text-one">Одномісне розміщення</p>
+                                            <p class="room-type-opened__info-amount-price">@Model[3].OnePersonPrice.ToShortString() грн</p>
+                                        </div>
+                                    }
+                                }
+                                @{
+                                    if (@Model[3].TwoPersonPrice != 0)
+                                    {
+                                        <div class="room-type-opened__info-amount">
+                                            <p class="room-type-opened__info-amount-text room-type-opened__info-amount-text-two">Двомісне розміщення</p>
+                                            <p class="room-type-opened__info-amount-price">@Model[3].TwoPersonPrice.ToShortString() грн</p>
+                                        </div>
+                                    }
+                                }
+                                @{
+                                    if (@Model[3].ThreePersonPrice != 0)
+                                    {
+                                        <div class="room-type-opened__info-amount">
+                                            <p class="room-type-opened__info-amount-text room-type-opened__info-amount-text-three">Тримісне розміщення</p>
+                                            <p class="room-type-opened__info-amount-price">@Model[3].ThreePersonPrice.ToShortString() грн</p>
+                                        </div>
+                                    }
+                                }
+                                @{
+                                    if (@Model[3].FourPersonPrice != 0)
+                                    {
+                                        <div class="room-type-opened__info-amount">
+                                            <p class="room-type-opened__info-amount-text room-type-opened__info-amount-text-four">Чотиримісне розміщення</p>
+                                            <p class="room-type-opened__info-amount-price">@Model[3].FourPersonPrice.ToShortString() грн</p>
+                                        </div>
+                                    }
+                                }
+
                             </div>
                             <div class="room-type-opened__info-description">
                                 <p class="room-type-opened__info-description-title">Опис:</p>
@@ -322,20 +465,20 @@
                                         <img class="room-slide-img" src="~/Content/img/rooms/room-photos/lux6tumb.jpg" alt="">
                                     </a>
                                     @*<a href="~/Content/img/rooms/room-photos/3.jpg" class="room-slide-thumb">
-                                        <img class="room-slide-img" src="~/Content/img/rooms/room-photos/3.jpg" alt="">
-                                    </a>*@
+                                            <img class="room-slide-img" src="~/Content/img/rooms/room-photos/3.jpg" alt="">
+                                        </a>*@
                                 </div>
                                 @*<div class="room-slide">
-                                    <a href="~/Content/img/rooms/room-photos/1.jpg" class="room-slide-thumb">
-                                        <img class="room-slide-img" src="~/Content/img/rooms/room-photos/1.jpg" alt="">
-                                    </a>
-                                    <a href="~/Content/img/rooms/room-photos/2.jpg" class="room-slide-thumb">
-                                        <img class="room-slide-img" src="~/Content/img/rooms/room-photos/2.jpg" alt="">
-                                    </a>
-                                    <a href="~/Content/img/rooms/room-photos/3.jpg" class="room-slide-thumb">
-                                        <img class="room-slide-img" src="~/Content/img/rooms/room-photos/3.jpg" alt="">
-                                    </a>
-                                </div>*@
+                                        <a href="~/Content/img/rooms/room-photos/1.jpg" class="room-slide-thumb">
+                                            <img class="room-slide-img" src="~/Content/img/rooms/room-photos/1.jpg" alt="">
+                                        </a>
+                                        <a href="~/Content/img/rooms/room-photos/2.jpg" class="room-slide-thumb">
+                                            <img class="room-slide-img" src="~/Content/img/rooms/room-photos/2.jpg" alt="">
+                                        </a>
+                                        <a href="~/Content/img/rooms/room-photos/3.jpg" class="room-slide-thumb">
+                                            <img class="room-slide-img" src="~/Content/img/rooms/room-photos/3.jpg" alt="">
+                                        </a>
+                                    </div>*@
                             </div>
                         </div>
                     </div>

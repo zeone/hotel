@@ -97,7 +97,7 @@ namespace Hotel.Controllers
 
             reservation.Apartment =
                 db.Apartments.Include(r => r.Type).FirstOrDefault(r => r.ApTypeId == reserv.TypeId);
-            await Task.Run(() => emailHelper.SendEmail(reservation, Server));
+            emailHelper.SendEmail(reservation, Server);
 
 
             return RedirectToAction("Index");

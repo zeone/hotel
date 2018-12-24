@@ -5,6 +5,7 @@
     var $departureMonthVisual = $('#departure-month');
     var $nightsVisual = $('#home-reservation-nights');
 
+    var isMobile = window.innerWidth < 768;
 
     var arrivalDate, departureDate, nightsCount, guestsAmount, startDate, endDate, guestCount;
 
@@ -17,7 +18,8 @@
         $('#departure-date').datepicker({
             language: 'en',
             dateFormat: 'd M',
-            onSelect: onDepartureDateSelect
+            onSelect: onDepartureDateSelect,
+            position: isMobile ? 'bottom right' : 'bottom left'
         });
 
         var arrivalDatepicker = $('#arrival-date').datepicker().data('datepicker');

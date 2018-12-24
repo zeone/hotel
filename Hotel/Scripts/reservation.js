@@ -1,6 +1,7 @@
 (function ($) {
     var arrivalDate, departureDate, startDate, endDate, departureDatepicker, rooms, guestCount, typeId, adultsCount, form, curDate;
     var hasError = false;
+    var isMobile = window.innerWidth < 768;
 
     $(document).ready(function () {
         $('#arrival-date').datepicker({
@@ -11,7 +12,8 @@
         $('#departure-date').datepicker({
             language: 'en',
             dateFormat: 'dd.mm.yyyy',
-            onSelect: onDepartureDateSelect
+            onSelect: onDepartureDateSelect,
+            position: isMobile ? 'bottom right' : 'bottom left'
         });
 
         var arrivalDatepicker = $('#arrival-date').datepicker().data('datepicker');

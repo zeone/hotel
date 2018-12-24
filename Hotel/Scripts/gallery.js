@@ -30,7 +30,6 @@
                 });
         }
 
-
         $('#loadPicsPhoto').click(function (e) {
             counter += 9;
             appendPics();
@@ -60,7 +59,7 @@
                 allImagesHeight = 0;
             }
         });
-        $('#gallery-wrapper').height((maxHeigth + minHeight) / 2 + 'px');
+        $('#gallery-wrapper').height(Math.ceil((maxHeigth + minHeight) / 2) + 'px');
     }
     function checkButton() {
         if (picsCount > counter)

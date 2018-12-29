@@ -24,14 +24,20 @@
     <link rel="stylesheet" href="~/Content/datepicker.min.css">
     <link rel="stylesheet" href="~/Content/chosen.css">
     <link rel="stylesheet" href="~/Content/slick.css">
-
+    
 </head>
 <body>
     <header id="header">
         <div class="container">
             <div id="header-container">
                 <a id="header-logo" href="/">Зелений Бір: Оздоровчий комплекс</a>
+                <button id="header-mobile-open">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
                 <div id="header-main">
+                    <button id="header-mobile-close">&times;</button>
                     <p class="header-link-text rootPage">
                         <a href="/" class="header-link">Головна</a>
                     </p>
@@ -149,6 +155,7 @@
     @Scripts.Render("~/bundles/bootstrap")
     @Scripts.Render("~/bundles/dropzonescripts")
     @RenderSection("scripts", required: false)
+    <script src="/Scripts/header.js"></script>
     <script type="text/javascript">
 
         $(document).ready(function () {

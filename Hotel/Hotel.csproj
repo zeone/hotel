@@ -440,6 +440,7 @@
     <Content Include="Scripts\dropzone\dropzone.min.css" />
     <Content Include="Scripts\dropzone\dropzone.min.js" />
     <Content Include="Scripts\gallery.js" />
+    <Content Include="Scripts\header.js" />
     <Content Include="Scripts\homepage.js" />
     <Content Include="Scripts\i18n\datepicker.cs.js" />
     <Content Include="Scripts\i18n\datepicker.da.js" />

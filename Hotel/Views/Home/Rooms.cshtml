@@ -80,7 +80,7 @@
                             <div class="room-type-opened__info-description">
                                 <p class="room-type-opened__info-description-title">Опис:</p>
                                 <p class="room-type-opened__info-description-text">
-                                    @Model[0].Description
+                                    @Html.Raw(Model[0].Description)
                                 </p>
                             </div>
                         </div>
@@ -204,7 +204,7 @@
                             <div class="room-type-opened__info-description">
                                 <p class="room-type-opened__info-description-title">Опис:</p>
                                 <p class="room-type-opened__info-description-text">
-                                    @Model[1].Description
+                                    @Html.Raw(Model[1].Description)
                                 </p>
                             </div>
                         </div>
@@ -310,7 +310,7 @@
                             <div class="room-type-opened__info-description">
                                 <p class="room-type-opened__info-description-title">Опис:</p>
                                 <p class="room-type-opened__info-description-text">
-                                    Люкс покращеного планування - двокімнатний номер з балконом: вітальня з меблевим гарнітуром, спальна кімната з двоспальним ліжком  Окремий санвузол: унітаз, умивальник,  ванна, фен, рушники. Автономне опалення, круглодобово гаряча і холодна вода.  Супутникове телебачення, телевізор, холодильник,  безкоштовний Інтернет, телефон.
+                                    @Html.Raw(Model[2].Description)
                                 </p>
                             </div>
                         </div>
@@ -440,7 +440,7 @@
                             <div class="room-type-opened__info-description">
                                 <p class="room-type-opened__info-description-title">Опис:</p>
                                 <p class="room-type-opened__info-description-text">
-                                    @Model[3].Description
+                                    @Html.Raw(Model[3].Description)
                                 </p>
                             </div>
                         </div>
@@ -502,9 +502,9 @@
         <p class="room-notes__text">
             <b>За дітей віком більше 6 років оплачується місце- знижка 25% від вартості дорослого. </b>
         </p>
-        <p class="room-notes__text">
+        @*<p class="room-notes__text">
             <b>Вартість розміщення домашньої тварини в номері становить 100 грн. за добу. За тварину вноситься додатково гарантійна застава в розмірі 300 грн.</b>
-        </p>
+        </p>*@
     </div>
 </section>
 
